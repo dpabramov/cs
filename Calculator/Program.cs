@@ -20,10 +20,6 @@ namespace ConsoleApp2
                 double val2 = GetValueFromConsole();
                 TypeOperation typeOperation = GetTypeOperation();
                 Calculate(val1, val2, typeOperation);
-
-
-
-
                 Console.Write("Продолжить (Y/N)? ");
                 consoleKeyInfo = Console.ReadKey();
                 Console.WriteLine("\n");
