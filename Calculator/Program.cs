@@ -12,7 +12,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            string con;
+            //string con;
             ConsoleKeyInfo consoleKeyInfo;
             do
             {
