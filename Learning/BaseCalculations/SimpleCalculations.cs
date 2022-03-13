@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Calculation.Types;
+using static BaseCalculations.Types;
 
-namespace Calculation
+namespace BaseCalculations
 {
-    public static class SimpleCalculation
+    public static class SimpleCalculations
     {
         public static TypeOperation GetTypeOperation()
         {
