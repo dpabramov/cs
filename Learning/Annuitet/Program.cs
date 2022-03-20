@@ -18,27 +18,38 @@ namespace Annuitet
 
             do
             {
-                Console.WriteLine("Введите сумму кредита:");
-                kredit = float.Parse(Console.ReadLine());
+                Console.Write("Введите сумму кредита: ");
+                if (!float.TryParse(Console.ReadLine(), out kredit))
+                    FinishProgram();
 
-                Console.WriteLine("Введите годовую процентную ставку:");
-                yps = float.Parse(Console.ReadLine());
+                Console.Write("Введите годовую процентную ставку: ");
+                if (!float.TryParse(Console.ReadLine(), out yps))
+                    FinishProgram();
 
-                Console.WriteLine("Введите срок кредита в месяцах:");
-                pp = int.Parse(Console.ReadLine());
+                Console.Write("Введите срок кредита в месяцах: ");
+                if(! int.TryParse(Console.ReadLine(), out pp))
+                    FinishProgram();
 
                 mps = yps / 1200;
 
                 annuitet = kredit * mps / (1 - Math.Pow((1 + mps), -pp));
                 pereplata = annuitet * pp - kredit;
 
-                Console.WriteLine($"Ежемесячный платеж составит: {annuitet:0.00}");
+                Console.WriteLine($"\nЕжемесячный платеж составит: {annuitet:0.00}");
                 Console.WriteLine($"Переплата  составит: {pereplata:0.00}");
-                Console.WriteLine($"Для повтора нажмите любую клавишу.Для выхода нажмите ESC...");
+                Console.WriteLine($"Для повтора нажмите любую клавишу, а для выхода - ESC...");
                 cki = Console.ReadKey();
             }
             while (cki.Key != ConsoleKey.Escape);
-            
+
+        }
+
+        static void FinishProgram()
+        {
+            Console.WriteLine($"Невозможно преобразовать в число." +
+                                        $"\nНажмите любую клавишу для выхода...");
+            Console.ReadKey();
+            Environment.Exit(12);
         }
     }
 }
