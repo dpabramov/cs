@@ -21,17 +21,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "064", "064\064.csproj", "{5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Annuitet", "Annuitet\Annuitet.csproj", "{8B4C8F2D-36E4-46AA-A878-B1D8F4EFDD64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03", "03\03.csproj", "{395152F4-C0B9-44F4-BDE8-3E45B023EC55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03", "03\03.csproj", "{395152F4-C0B9-44F4-BDE8-3E45B023EC55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "031_arrays", "031_arrays\031_arrays.csproj", "{384EB6B1-5D02-4A30-9584-12C0EF37C787}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "031_arrays", "031_arrays\031_arrays.csproj", "{384EB6B1-5D02-4A30-9584-12C0EF37C787}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "032_table_pifagor", "032_table_pifagor\032_table_pifagor.csproj", "{E4DE1AB2-ABAC-417C-A68C-F5D325FB9B38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "032_table_pifagor", "032_table_pifagor\032_table_pifagor.csproj", "{E4DE1AB2-ABAC-417C-A68C-F5D325FB9B38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "033_Hex_Bynary", "033_Hex_Bynary\033_Hex_Bynary.csproj", "{BCD33905-D874-467E-BC20-335DC8A8B001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "041_Hex_Bynary", "033_Hex_Bynary\041_Hex_Bynary.csproj", "{BCD33905-D874-467E-BC20-335DC8A8B001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "034_bit_mask", "034_bit_mask\034_bit_mask.csproj", "{2F94C5A2-F1B8-4F65-981A-EA6C21F5B760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "042_bit_mask", "034_bit_mask\042_bit_mask.csproj", "{2F94C5A2-F1B8-4F65-981A-EA6C21F5B760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "035_Palitra", "035_Palitra\035_Palitra.csproj", "{55B25AD8-1221-44F4-B8C8-0E560DDD01C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "043_Palitra", "035_Palitra\043_Palitra.csproj", "{55B25AD8-1221-44F4-B8C8-0E560DDD01C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
