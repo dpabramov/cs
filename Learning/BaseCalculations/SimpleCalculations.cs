@@ -7,58 +7,72 @@ namespace BaseCalculations
     {
         public static TypeOperation GetTypeOperation()
         {
-            TypeOperation typeOperation;
-        Start:
-            Console.Write("Введите тип операции (0 - сложение, 1- вычитание, 2-умножение, 3 -деление, 4-возведение в степень, 5 - остаток от деления): ");
+            TypeOperation? typeOperation = null;
+        
+            Console.Write(
+                "Введите тип операции " +
+                "(0 - сложение, " +
+                "1 - вычитание, " +
+                "2 - умножение, " +
+                "3 - деление, " +
+                "4 - возведение в степень, " +
+                "5 - остаток от деления): ");
 
-            try
+            do
             {
-                typeOperation = (TypeOperation)Enum.Parse(typeof(TypeOperation), Console.ReadLine());
-            }
-            catch (ArgumentException)
-            {
-                Console.WriteLine("Введено некорректное значение... Повторите ввод.");
-                goto Start;
-            }
-            catch
-            {
-                Console.WriteLine("Что-то не то... Повторите ввод.");
-                goto Start;
-            }
+                try
+                {
+                    typeOperation = (TypeOperation)Enum.Parse(typeof(TypeOperation), Console.ReadLine());
+                }
+                catch (ArgumentException)
+                {
+                    Console.WriteLine("Введено некорректное значение... Повторите ввод.");
+                }
+                catch
+                {
+                    Console.WriteLine("Что-то не то... Повторите ввод.");
+                }
 
+                if (typeOperation.HasValue)
+                    break;
 
-            return typeOperation;
+            } while (true);
+            
+
+            return (TypeOperation)typeOperation;
         }
 
         public static double GetValueFromConsole()
         {
-            double val1;
 
-        start:
+            double? val1 = null;
             Console.Write("Введите число: ");
-            string str = Console.ReadLine();
+            
+            do
+            {
+                try
+                {
+                    val1 = Convert.ToDouble(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Входная строка имела неверный формат.\nПовторите попытку ввода...");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Слишком большое число.\nПовторите попытку ввода...");
+                }
+                catch
+                {
+                    Console.WriteLine("Вообще какая-то хрень.\nПовторите попытку ввода...");
+                }
 
-            try
-            {
-                val1 = Convert.ToDouble(str);
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Входная строка имела неверный формат.\nПовторите попытку ввода...");
-                goto start;
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("Слишком большое число.\nПовторите попытку ввода...");
-                goto start;
-            }
-            catch
-            {
-                Console.WriteLine("Вообще какая-то хрень.\nПовторите попытку ввода...");
-                goto start;
-            }
+                if (val1.HasValue)
+                    break;
 
-            return val1;
+            } while (true);
+ 
+            return (double)val1;
         }
 
         public static void Calculate(double val1, double val2, TypeOperation typeOperation)

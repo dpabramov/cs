@@ -19,7 +19,14 @@ namespace Calculator_Core
                 Console.Write("Продолжить (Y/N)? ");
                 consoleKeyInfo = Console.ReadKey();
                 Console.WriteLine("\n");
-            } while (consoleKeyInfo.Key.ToString() == "y" || consoleKeyInfo.Key.ToString() == "Y");
+            }
+            //consoleKeyInfo.Key - это именно нажатая клавиша, а не символ
+            //и не важно в какой раскладке и на каком языке
+            //ConsoleKey.Y  - это сама клавиша Y, т.е. делаем так:
+            //consoleKeyInfo.Key.Equals(ConsoleKey.Y)
+            //а если нужно сравнить  именно символы, тогда так:
+            //consoleKeyInfo.KeyChar.Equals('y')
+            while (consoleKeyInfo.Key.Equals(ConsoleKey.Y));
         }
     }
 }
