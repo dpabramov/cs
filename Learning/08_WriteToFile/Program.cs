@@ -20,7 +20,7 @@ namespace _08_WriteToFile
                 //создаем файл, если он есть, то удаляем и создаем новый
                 FileMode.Create,
                 //открываем для записи
-                FileAccess.Write, 
+                FileAccess.Write,
                 //пока файл открыт для записи его параллельно можно читать
                 FileShare.Read);
 
