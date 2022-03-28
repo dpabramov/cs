@@ -412,8 +412,6 @@ namespace _083_DictionaryGame
             int truthAnswer = 0;
             int totalQuestions = 10;
 
-
-
             for (int i = 0; i < totalQuestions; i++)
             {
                 key = random.Next(countries.Count);
@@ -428,9 +426,7 @@ namespace _083_DictionaryGame
             Console.WriteLine($"Количество правильных ответов {truthAnswer} из {totalQuestions}.");
 
             foreach (var i in result)
-            {
                 Console.WriteLine($"{i.Key}\t - {i.Value}");
-            }
 
             Console.ReadKey();
         }
