@@ -43,33 +43,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "052_ternar_operator", "052_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "053_switch", "053_switch\053_switch.csproj", "{674F0526-62A0-4442-9AF7-98EA207E0D9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "054_exception", "054\054_exception.csproj", "{0FC5E651-A6B6-42A1-B412-9830CBABBA28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "054_exception", "054\054_exception.csproj", "{0FC5E651-A6B6-42A1-B412-9830CBABBA28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_string", "07_string\07_string.csproj", "{08B86138-04CA-4E01-9C86-38698CA2BAC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_string", "07_string\07_string.csproj", "{08B86138-04CA-4E01-9C86-38698CA2BAC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumExample", "EnumExample\EnumExample.csproj", "{0C94859C-5993-4C6B-90AB-47659E34B665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumExample", "EnumExample\EnumExample.csproj", "{0C94859C-5993-4C6B-90AB-47659E34B665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "071_Civilization", "071_Civilization\071_Civilization.csproj", "{8DD23FE6-B05C-42FD-974E-A6609EF39595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "071_Civilization", "071_Civilization\071_Civilization.csproj", "{8DD23FE6-B05C-42FD-974E-A6609EF39595}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "072_DirtyString", "072_DirtyString\072_DirtyString.csproj", "{ECC38086-A18A-43B0-9573-45645C2530CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "072_DirtyString", "072_DirtyString\072_DirtyString.csproj", "{ECC38086-A18A-43B0-9573-45645C2530CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "073_PascalCasing_CamelCasing", "073_PascalCasing_CamelCasing\073_PascalCasing_CamelCasing.csproj", "{62178356-1AC0-4D9F-AFA8-82924EB8FAF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "073_PascalCasing_CamelCasing", "073_PascalCasing_CamelCasing\073_PascalCasing_CamelCasing.csproj", "{62178356-1AC0-4D9F-AFA8-82924EB8FAF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_WriteToFile", "08_WriteToFile\08_WriteToFile.csproj", "{841FDEE8-B8CC-4204-8720-D8E9DA1341BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_WriteToFile", "08_WriteToFile\08_WriteToFile.csproj", "{841FDEE8-B8CC-4204-8720-D8E9DA1341BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "081_ListExamples", "081_ListExamples\081_ListExamples.csproj", "{915BFFCA-0F00-4701-BCB3-ACC811B94C3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "081_ListExamples", "081_ListExamples\081_ListExamples.csproj", "{915BFFCA-0F00-4701-BCB3-ACC811B94C3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "082_DictionaryExample", "082_DictionaryExample\082_DictionaryExample.csproj", "{AC518FFB-9D04-4CCD-AE15-2E531458DD99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "082_DictionaryExample", "082_DictionaryExample\082_DictionaryExample.csproj", "{AC518FFB-9D04-4CCD-AE15-2E531458DD99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "083_DictionaryGame", "083_DictionaryGame\083_DictionaryGame.csproj", "{6545C08D-1DFD-4A40-AC1E-A26136938381}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "083_DictionaryGame", "083_DictionaryGame\083_DictionaryGame.csproj", "{6545C08D-1DFD-4A40-AC1E-A26136938381}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "084_QueueExample", "084_QueueExample\084_QueueExample.csproj", "{A995B07E-2769-4073-B4F1-CFBD49D37DF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "084_QueueExample", "084_QueueExample\084_QueueExample.csproj", "{A995B07E-2769-4073-B4F1-CFBD49D37DF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "085_StackExample", "085_StackExample\085_StackExample.csproj", "{E0DB83AC-F91C-4AA5-97F5-4FD2A18FE784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "085_StackExample", "085_StackExample\085_StackExample.csproj", "{E0DB83AC-F91C-4AA5-97F5-4FD2A18FE784}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "086_CorectSkobki", "086_CorectSkobki\086_CorectSkobki.csproj", "{674F181C-5FC6-4138-92C8-8E42FB84A5A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "086_CorectSkobki", "086_CorectSkobki\086_CorectSkobki.csproj", "{674F181C-5FC6-4138-92C8-8E42FB84A5A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Simple", "01_Simple\01_Simple.csproj", "{19120F27-357A-4015-9B04-B0AB7E606FBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuadraticEquation", "QuadraticEquation\QuadraticEquation.csproj", "{A09DA24F-0F2A-417F-A094-B097014E4908}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -209,10 +209,10 @@ Global
 		{674F181C-5FC6-4138-92C8-8E42FB84A5A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{674F181C-5FC6-4138-92C8-8E42FB84A5A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{674F181C-5FC6-4138-92C8-8E42FB84A5A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19120F27-357A-4015-9B04-B0AB7E606FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19120F27-357A-4015-9B04-B0AB7E606FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19120F27-357A-4015-9B04-B0AB7E606FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19120F27-357A-4015-9B04-B0AB7E606FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A09DA24F-0F2A-417F-A094-B097014E4908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A09DA24F-0F2A-417F-A094-B097014E4908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A09DA24F-0F2A-417F-A094-B097014E4908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A09DA24F-0F2A-417F-A094-B097014E4908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
