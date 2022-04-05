@@ -33,12 +33,13 @@ namespace _102_ReminderItem
             AlarmMessage = alarmMessage;
         }
 
-        public void WriteProperties()
+        public virtual void WriteProperties()
         {
-            Console.WriteLine($"AlarmDate: {AlarmDate}," +
-                $"\nAlarmMessage: {AlarmMessage}" +
-                $"\nTimeToAlarm: {TimeToAlarm}" +
-                $"\nisOutDate: {isOutDate}");
+            Console.WriteLine($"[{GetType().Name}] " +
+                $"\nAlarmDate: {AlarmDate}, " +
+                $"\nAlarmMessage: {AlarmMessage} " +
+                $"\nTimeToAlarm: {TimeToAlarm} " +
+                $"\nisOutDate: {isOutDate} ");
         }
     }
 }

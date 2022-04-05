@@ -73,19 +73,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuadraticEquation", "Quadra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_Algorithm", "09_Algorithm\09_Algorithm.csproj", "{870405CF-631C-4C7F-967E-26EF33906183}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "091_ValueTypesMethod", "091_ValueTypesMethod\091_ValueTypesMethod.csproj", "{138A8A1C-6C9E-4239-8D11-C603B00A59A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "091_ValueTypesMethod", "091_ValueTypesMethod\091_ValueTypesMethod.csproj", "{138A8A1C-6C9E-4239-8D11-C603B00A59A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "092_ReferenceTypeMethod", "092_ReferenceTypeMethod\092_ReferenceTypeMethod.csproj", "{33F43BAF-450E-467B-AB19-AF85635D1BA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "092_ReferenceTypeMethod", "092_ReferenceTypeMethod\092_ReferenceTypeMethod.csproj", "{33F43BAF-450E-467B-AB19-AF85635D1BA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_Class", "10_Class\10_Class.csproj", "{8DEE7670-AF41-4A05-B196-B625153335B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_Class", "10_Class\10_Class.csproj", "{8DEE7670-AF41-4A05-B196-B625153335B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "101_ClassGetterSetter", "101_ClassGetterSetter\101_ClassGetterSetter.csproj", "{EC3CB528-7320-4C49-A456-BA02FFAE4A87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "101_ClassGetterSetter", "101_ClassGetterSetter\101_ClassGetterSetter.csproj", "{EC3CB528-7320-4C49-A456-BA02FFAE4A87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "102_ReminderItem", "102_ReminderItem\102_ReminderItem.csproj", "{DC969DD4-422E-4860-9B23-835979490DC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "102_ReminderItem", "102_ReminderItem\102_ReminderItem.csproj", "{DC969DD4-422E-4860-9B23-835979490DC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Example", "12_Example\12_Example.csproj", "{501BD601-23EF-4767-9A07-ED507CAA321A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Example", "12_Example\12_Example.csproj", "{501BD601-23EF-4767-9A07-ED507CAA321A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "121_Document", "121_Document\121_Document.csproj", "{6A5EB9EF-257F-4F95-A159-2FB76848F926}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "121_Document", "121_Document\121_Document.csproj", "{6A5EB9EF-257F-4F95-A159-2FB76848F926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_AbstractClass", "013_AbstractClass\13_AbstractClass.csproj", "{74EB1892-6C0F-4AE1-BC14-1ED68C0D7643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "131_Dispose", "131_Dispose\131_Dispose.csproj", "{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -261,6 +265,14 @@ Global
 		{6A5EB9EF-257F-4F95-A159-2FB76848F926}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A5EB9EF-257F-4F95-A159-2FB76848F926}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A5EB9EF-257F-4F95-A159-2FB76848F926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74EB1892-6C0F-4AE1-BC14-1ED68C0D7643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74EB1892-6C0F-4AE1-BC14-1ED68C0D7643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74EB1892-6C0F-4AE1-BC14-1ED68C0D7643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74EB1892-6C0F-4AE1-BC14-1ED68C0D7643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _102_ReminderItem
 {
@@ -6,16 +7,25 @@ namespace _102_ReminderItem
     {
         static void Main(string[] args)
         {
-            ReminderItem reminderItem = new ReminderItem(
-                DateTimeOffset.Parse("2022-04-02 17:55"),
-                "Пора вставать!");
+            List<ReminderItem> array = new List<ReminderItem>
+            {
+                new ReminderItem(DateTimeOffset.Parse("2022-04-02 17:55"),
+                                     "Пора вставать!"),
 
-            ReminderItem reminderItem2 = new ReminderItem(
-                DateTimeOffset.Parse("2022-04-02 18:55"),
-                "Пора на футбол!");
+                new PhoneReminderItem(DateTimeOffset.Parse("2022-04-02 17:55"),
+                                     "Пора вставать!",
+                                     "89888888888"),
 
-            reminderItem.WriteProperties();
-            reminderItem2.WriteProperties();
+                new ChatReminderItem(DateTimeOffset.Parse("2022-04-02 17:55"),
+                                    "Пора вставать!",
+                                    "Чат родных",
+                                    "Дима_account")
+            };
+
+            foreach (ReminderItem ar in array)
+            {
+                ar.WriteProperties();
+            }
 
             Console.ReadKey();
         }

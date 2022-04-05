@@ -24,7 +24,7 @@ namespace _08_WriteToFile
                 //пока файл открыт для записи его параллельно можно читать
                 FileShare.Read);
 
-            fileStream.Write(array);
+            
             fileStream.Close();
 
             //дозапишем в файл
