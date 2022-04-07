@@ -91,6 +91,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_AbstractClass", "013_Abs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "131_Dispose", "131_Dispose\131_Dispose.csproj", "{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "132_FileAndConsolLogWriter", "FileAndConsolLogWriter\132_FileAndConsolLogWriter.csproj", "{D382215C-07A7-44BF-9568-43D72DCE2481}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -273,6 +275,10 @@ Global
 		{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D382215C-07A7-44BF-9568-43D72DCE2481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D382215C-07A7-44BF-9568-43D72DCE2481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D382215C-07A7-44BF-9568-43D72DCE2481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D382215C-07A7-44BF-9568-43D72DCE2481}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
