@@ -8,14 +8,37 @@ namespace FileAndConsolLogWriter
 {
     class FileLogWriter : ILogWriter, IDisposable
     {
+        //реализуем синглтон
+        private static FileLogWriter _fileLogWriter;
+
+        //реализуем синглтон
+        public static FileLogWriter GetInstance(string fileName)
+        {
+            if (_fileLogWriter == null)
+            {
+                _fileLogWriter = new FileLogWriter();
+                _fileLogWriter._fileName = fileName;
+            };
+
+            return _fileLogWriter;
+        }
+
         private string _fileName;
 
         private FileStream _fileStream;
 
-        public FileLogWriter(string fileName)
+        //реализуем синглтон
+        //public FileLogWriter(string fileName)
+        //{
+        //    _fileName = fileName;
+        //}
+
+        //реализуем синглтон
+        private FileLogWriter()
         {
-            _fileName = fileName;
         }
+
+
 
         private void WriteToFile(string message)
         {
@@ -38,7 +61,7 @@ namespace FileAndConsolLogWriter
 
         public void LogError(string message)
         {
-            string m = LogStringFormat.GetLogString(MessageType.Error, message) +"\n";
+            string m = LogStringFormat.GetLogString(MessageType.Error, message) + "\n";
             WriteToFile(m);
         }
 

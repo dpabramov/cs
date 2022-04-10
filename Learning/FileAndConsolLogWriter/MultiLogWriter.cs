@@ -6,37 +6,46 @@ namespace FileAndConsolLogWriter
 {
     class MultiLogWriter : ILogWriter
     {
+        //реализуем синглтон
+        private static MultiLogWriter _multiLogWriter;
+
+        //реализуем синглтон
+        public static MultiLogWriter GetInstance(List<ILogWriter> logWriters)
+        {
+            if (_multiLogWriter == null)
+                _multiLogWriter = new MultiLogWriter();
+
+            _multiLogWriter._logWriters = logWriters;
+            return _multiLogWriter;
+
+        }
+
         private List<ILogWriter> _logWriters;
 
-        public MultiLogWriter(List<ILogWriter> logWriters)
+        //реализуем синглтон
+        private MultiLogWriter()
         {
-            _logWriters = logWriters;
         }
+
+        //реализуем синглтон
+        //public MultiLogWriter(List<ILogWriter> logWriters)
+        //{
+        //    _logWriters = logWriters;
+        //}
 
         public void LogError(string message)
         {
-            foreach (ILogWriter il in _logWriters)
-            {
-                il.LogError(message);
-            }
-
-            //_logWriters.ForEach
+            _logWriters.ForEach(delegate (ILogWriter writer) { writer.LogError(message); });
         }
 
         public void LogInfo(string message)
         {
-            foreach (ILogWriter il in _logWriters)
-            {
-                il.LogInfo(message);
-            }
+            _logWriters.ForEach(delegate (ILogWriter writer) { writer.LogInfo(message); });
         }
 
         public void LogWarning(string message)
         {
-            foreach (ILogWriter il in _logWriters)
-            {
-                il.LogWarning(message);
-            }
+            _logWriters.ForEach(delegate (ILogWriter writer) { writer.LogWarning(message); });
         }
     }
 }

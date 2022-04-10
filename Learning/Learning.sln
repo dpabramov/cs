@@ -87,11 +87,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Example", "12_Example\12
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "121_Document", "121_Document\121_Document.csproj", "{6A5EB9EF-257F-4F95-A159-2FB76848F926}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_AbstractClass", "013_AbstractClass\13_AbstractClass.csproj", "{74EB1892-6C0F-4AE1-BC14-1ED68C0D7643}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_AbstractClass", "013_AbstractClass\13_AbstractClass.csproj", "{74EB1892-6C0F-4AE1-BC14-1ED68C0D7643}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "131_Dispose", "131_Dispose\131_Dispose.csproj", "{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "131_Dispose", "131_Dispose\131_Dispose.csproj", "{DDE053C9-AF83-49C8-8A37-475CD00AD9A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "132_FileAndConsolLogWriter", "FileAndConsolLogWriter\132_FileAndConsolLogWriter.csproj", "{D382215C-07A7-44BF-9568-43D72DCE2481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "132_FileAndConsolLogWriter", "FileAndConsolLogWriter\132_FileAndConsolLogWriter.csproj", "{D382215C-07A7-44BF-9568-43D72DCE2481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_ErrorList", "14_ErrorList\14_ErrorList.csproj", "{58D356B9-F908-44A5-97A7-FCD4EA7B208F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "141_IEnumeratorExample", "141_IEnumeratorExample\141_IEnumeratorExample.csproj", "{1389A29E-503D-4EAD-B331-9099D5765379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "142_StaticExample", "142_StaticExample\142_StaticExample.csproj", "{3DDC784C-702E-4DF3-AD68-F4BD43396E3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "143_SingltonExample", "143_SingltonExample\143_SingltonExample.csproj", "{EE0F3DA8-9AA3-4878-B423-FF87BF5D562B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -279,6 +287,22 @@ Global
 		{D382215C-07A7-44BF-9568-43D72DCE2481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D382215C-07A7-44BF-9568-43D72DCE2481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D382215C-07A7-44BF-9568-43D72DCE2481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D356B9-F908-44A5-97A7-FCD4EA7B208F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D356B9-F908-44A5-97A7-FCD4EA7B208F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D356B9-F908-44A5-97A7-FCD4EA7B208F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D356B9-F908-44A5-97A7-FCD4EA7B208F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1389A29E-503D-4EAD-B331-9099D5765379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1389A29E-503D-4EAD-B331-9099D5765379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1389A29E-503D-4EAD-B331-9099D5765379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1389A29E-503D-4EAD-B331-9099D5765379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DDC784C-702E-4DF3-AD68-F4BD43396E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DDC784C-702E-4DF3-AD68-F4BD43396E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DDC784C-702E-4DF3-AD68-F4BD43396E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DDC784C-702E-4DF3-AD68-F4BD43396E3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE0F3DA8-9AA3-4878-B423-FF87BF5D562B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0F3DA8-9AA3-4878-B423-FF87BF5D562B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0F3DA8-9AA3-4878-B423-FF87BF5D562B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0F3DA8-9AA3-4878-B423-FF87BF5D562B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,16 +19,18 @@ namespace FileAndConsolLogWriter
             //fileLogWriter.LogError("Ошибка");
 
             ConsoleLogWriter consoleLogWriter = new ConsoleLogWriter();
-            FileLogWriter fileLogWriter = new FileLogWriter("file11.log");
-            FileLogWriter fileLogWriter2 = new FileLogWriter("file22.log");
+            ConsoleLogWriter consoleLogWriter2 = new ConsoleLogWriter();
+            FileLogWriter fileLogWriter = FileLogWriter.GetInstance("file11.log");
+            FileLogWriter fileLogWriter2 = FileLogWriter.GetInstance("file22.log");
             List<ILogWriter> logWriters = new List<ILogWriter>
             {
                 consoleLogWriter,
+                consoleLogWriter2,
                 fileLogWriter,
                 fileLogWriter2
             };
 
-            MultiLogWriter multiLogWriters = new MultiLogWriter(logWriters);
+            MultiLogWriter multiLogWriters = MultiLogWriter.GetInstance(logWriters);
 
             multiLogWriters.LogInfo("Это просто снова info пипец");
             multiLogWriters.LogWarning("Это просто снова warning пипец");
