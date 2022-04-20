@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FileAndConsolLogWriter
 {
-    class FileLogWriter : ILogWriter, IDisposable
+    class FileLogWriter : LogWriter, IDisposable
     {
         //реализуем синглтон
         private static FileLogWriter _fileLogWriter;
@@ -38,12 +38,10 @@ namespace FileAndConsolLogWriter
         {
         }
 
-
-
         private void WriteToFile(string message)
         {
             //массив для записи в файл
-            byte[] arr = Encoding.UTF8.GetBytes(message);
+            byte[] arr = Encoding.UTF8.GetBytes(message + "\n");
 
             //создаем или открываем файл
             using (_fileStream = new FileStream(_fileName,
@@ -59,27 +57,28 @@ namespace FileAndConsolLogWriter
             }
         }
 
-        public void LogError(string message)
+        //можно записывать в файл другим потоком...
+        private void WriteToFile2(string message)
         {
-            string m = LogStringFormat.GetLogString(MessageType.Error, message) + "\n";
-            WriteToFile(m);
-        }
-
-        public void LogInfo(string message)
-        {
-            string m = LogStringFormat.GetLogString(MessageType.Info, message) + "\n";
-            WriteToFile(m);
-        }
-
-        public void LogWarning(string message)
-        {
-            string m = LogStringFormat.GetLogString(MessageType.Warning, message) + "\n"; ;
-            WriteToFile(m);
+            using (StreamWriter sw = new StreamWriter(File.Open(_fileName,
+                FileMode.Append, 
+                FileAccess.Write,
+                FileShare.Read)
+                ))
+            {
+                sw.WriteLine(message);
+            }
         }
 
         public void Dispose()
         {
             _fileStream.Close();
+        }
+
+        public override void WriteSingleRecord(string message)
+        {
+            //можно использовать WriteToFile или WriteToFile2
+            WriteToFile2(message);
         }
     }
 }

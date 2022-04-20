@@ -4,13 +4,13 @@ using System.Text;
 
 namespace FileAndConsolLogWriter
 {
-    class MultiLogWriter : ILogWriter
+    class MultiLogWriter : LogWriter
     {
         //реализуем синглтон
         private static MultiLogWriter _multiLogWriter;
 
         //реализуем синглтон
-        public static MultiLogWriter GetInstance(List<ILogWriter> logWriters)
+        public static MultiLogWriter GetInstance(List<LogWriter> logWriters)
         {
             if (_multiLogWriter == null)
                 _multiLogWriter = new MultiLogWriter();
@@ -20,7 +20,7 @@ namespace FileAndConsolLogWriter
 
         }
 
-        private List<ILogWriter> _logWriters;
+        private List<LogWriter> _logWriters;
 
         //реализуем синглтон
         private MultiLogWriter()
@@ -33,19 +33,12 @@ namespace FileAndConsolLogWriter
         //    _logWriters = logWriters;
         //}
 
-        public void LogError(string message)
+        public override void WriteSingleRecord(string message)
         {
-            _logWriters.ForEach(delegate (ILogWriter writer) { writer.LogError(message); });
-        }
-
-        public void LogInfo(string message)
-        {
-            _logWriters.ForEach(delegate (ILogWriter writer) { writer.LogInfo(message); });
-        }
-
-        public void LogWarning(string message)
-        {
-            _logWriters.ForEach(delegate (ILogWriter writer) { writer.LogWarning(message); });
+            _logWriters.ForEach(delegate (LogWriter writer)
+            {
+                writer.WriteSingleRecord(message);
+            });
         }
     }
 }

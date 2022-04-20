@@ -1,6 +1,6 @@
-﻿using System;
-using static BaseCalculations.SimpleCalculations;
-using static BaseCalculations.Types;
+﻿using BaseCalculations;
+using System;
+
 
 
 namespace Calculator_Core
@@ -12,10 +12,15 @@ namespace Calculator_Core
             ConsoleKeyInfo consoleKeyInfo;
             do
             {
-                double val1 = GetValueFromConsole();
-                double val2 = GetValueFromConsole();
-                TypeOperation typeOperation = GetTypeOperation();
-                Calculate(val1, val2, typeOperation);
+                double val1 = GetDoubleValueFromConsol();
+                double val2 = GetDoubleValueFromConsol();
+
+                SimpleCalculator.Calculate(SimpleCalculator.Summ, val1, val2, "+");
+                SimpleCalculator.Calculate(SimpleCalculator.Minus, val1, val2, "-");
+                SimpleCalculator.Calculate(SimpleCalculator.Multiply, val1, val2, "*");
+                SimpleCalculator.Calculate(SimpleCalculator.Devide, val1, val2, "/");
+                SimpleCalculator.Calculate((x, y) => Math.Pow(x, y), val1, val2, "pow");
+
                 Console.Write("Продолжить (Y/N)? ");
                 consoleKeyInfo = Console.ReadKey();
                 Console.WriteLine("\n");
@@ -28,5 +33,16 @@ namespace Calculator_Core
             //consoleKeyInfo.KeyChar.Equals('y')
             while (consoleKeyInfo.Key.Equals(ConsoleKey.Y));
         }
+
+        static double GetDoubleValueFromConsol()
+        {
+            Console.Write("введите число: ");
+            return Double.Parse(Console.ReadLine());
+        }
+
+        //static double Pow(double a, double b)
+        //{
+        //    return Math.Pow(a, b);
+        //}
     }
 }

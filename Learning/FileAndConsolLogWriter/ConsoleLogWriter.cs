@@ -4,21 +4,11 @@ using System.Text;
 
 namespace FileAndConsolLogWriter
 {
-    public class ConsoleLogWriter : ILogWriter
+    public class ConsoleLogWriter : LogWriter
     {
-        public void LogError(string message)
+        public override void WriteSingleRecord(string message)
         {
-            Console.WriteLine(LogStringFormat.GetLogString(MessageType.Error, message));
-        }
-
-        public void LogInfo(string message)
-        {
-            Console.WriteLine(LogStringFormat.GetLogString(MessageType.Info, message));
-        }
-
-        public void LogWarning(string message)
-        {
-            Console.WriteLine(LogStringFormat.GetLogString(MessageType.Warning, message));
+            Console.WriteLine(message);
         }
     }
 }

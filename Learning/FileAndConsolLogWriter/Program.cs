@@ -22,7 +22,7 @@ namespace FileAndConsolLogWriter
             ConsoleLogWriter consoleLogWriter2 = new ConsoleLogWriter();
             FileLogWriter fileLogWriter = FileLogWriter.GetInstance("file11.log");
             FileLogWriter fileLogWriter2 = FileLogWriter.GetInstance("file22.log");
-            List<ILogWriter> logWriters = new List<ILogWriter>
+            List<LogWriter> logWriters = new List<LogWriter>
             {
                 consoleLogWriter,
                 consoleLogWriter2,
