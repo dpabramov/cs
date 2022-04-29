@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using Reminder.Storage.Core;
+using Reminder.Domain.Models;
 
 
 namespace Reminder.Domain
@@ -20,11 +21,13 @@ namespace Reminder.Domain
 
         private Timer _timerSendMessage;
 
-        public Action<ReminderItem> ActionSendReadyReminders;
+        public Action<ReminderItem> SendReminder;
 
-        public event EventHandler OnSuccessSendMessageEvent;
+        public event EventHandler<StatusChangedToReadyEventArgs> StatusChangedToReady;
 
-        public event EventHandler OnFailureSendMessageEvent;
+        public event EventHandler<SendingSucceededEventArgs> SendingSucceeded;
+
+        public event EventHandler<SendingFailedEventArgs> SendingFailed;
 
         public ReminderDomain(IReminderStorage Storage,
                             TimeSpan PeriodChangeStatusAwatingToReady,
@@ -69,31 +72,31 @@ namespace Reminder.Domain
                 try
                 {
                     //отправляем сообщение, Для этого в sender делаем метод отправки
-                    //и там добавляем его в делегат  ActionSendReadyReminders
-                    ActionSendReadyReminders?.Invoke(reminder);
-
-                    //если досюда не свалились, зажигаем событие OnSuccessSendMessageEvent
-                    SuccessSendMessageEventArgs sendMessageEventArgs = new SuccessSendMessageEventArgs
-                    {
-                        ReminderItem = reminder
-                    };
-                    OnSuccessSendMessageEvent?.Invoke(this, sendMessageEventArgs);
+                    //и там добавляем его в делегат  SendReminder
+                    SendReminder?.Invoke(reminder);
 
                     //изменяем статус записи в хранилище на Sent
                     _storage.Update(reminder.Id, ReminderItemStatus.Sent);
+
+                    //если досюда не свалились, зажигаем событие SendingSucceeded
+                    SendingSucceededEventArgs sendingSucceededEventArgs = new SendingSucceededEventArgs
+                    {
+                        Item = reminder
+                    };
+                    SendingSucceeded?.Invoke(this, sendingSucceededEventArgs);
                 }
                 catch (Exception e)
                 {
-                    //если свалились, зажигаем OnFailureSendMessageEvent
-                    FailSendMessageEventArgs sendMessageEventArgs = new FailSendMessageEventArgs
-                    {
-                        ReminderItem = reminder,
-                        Exception = e
-                    };
-                    OnFailureSendMessageEvent?.Invoke(this, sendMessageEventArgs);
-
-                    //изменяем статус записи в хранилище на Failed
+                    //если свалились в исключение, изменяем статус записи в хранилище на Failed
                     _storage.Update(reminder.Id, ReminderItemStatus.Failed);
+
+                    // ... и зажигаем SendingFailed
+                    SendingFailedEventArgs sendingFailedEventArgsEventArgs = new SendingFailedEventArgs
+                    {
+                        Item = reminder,
+                        SendingException = e
+                    };
+                    SendingFailed?.Invoke(this, sendingFailedEventArgsEventArgs);
                 }
             }
         }
@@ -106,6 +109,13 @@ namespace Reminder.Domain
             {
                 if (reminder.isReadyToSent)
                     _storage.Update(reminder.Id, ReminderItemStatus.Ready);
+
+                //зажигаем событие статус изменен на ready
+                StatusChangedToReady?.Invoke(this,
+                             new StatusChangedToReadyEventArgs
+                             {
+                                 Item = reminder
+                             });
             }
         }
 

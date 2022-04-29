@@ -7,13 +7,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.Core", "Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.InMemory", "Reminder.Storage.InMemory\Reminder.Storage.InMemory.csproj", "{C0E3F016-ABAF-418C-B5C5-FCFB5DF46D21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Storage.Core.Test", "Reminder.Storage.Core.Test\Reminder.Storage.Core.Test.csproj", "{2F77DD43-2DFE-46D3-8A6F-29E4CFA60B74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.Core.Test", "Reminder.Storage.Core.Test\Reminder.Storage.Core.Test.csproj", "{2F77DD43-2DFE-46D3-8A6F-29E4CFA60B74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Storage.InMemory.Test", "Reminder.Storage.InMemory.Test\Reminder.Storage.InMemory.Test.csproj", "{4D6CF371-5B60-4821-9613-FB28A1501813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.InMemory.Test", "Reminder.Storage.InMemory.Test\Reminder.Storage.InMemory.Test.csproj", "{4D6CF371-5B60-4821-9613-FB28A1501813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Domain", "Reminder.Domain\Reminder.Domain.csproj", "{AFE27018-1969-49D3-99C3-6AE7B659391F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Domain", "Reminder.Domain\Reminder.Domain.csproj", "{AFE27018-1969-49D3-99C3-6AE7B659391F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Domain.Test", "Reminder.Domain.Test\Reminder.Domain.Test.csproj", "{95F509CF-36B0-47FF-BECD-87E38CBE2755}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Domain.Test", "Reminder.Domain.Test\Reminder.Domain.Test.csproj", "{95F509CF-36B0-47FF-BECD-87E38CBE2755}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Sender.Core", "Reminder.Sender.Core\Reminder.Sender.Core.csproj", "{9452774B-F964-4088-A22D-C9B29889654C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Sender.Telegram", "Reminder.Sender.Telegram\Reminder.Sender.Telegram.csproj", "{E2F30E30-E621-4CB7-8968-88E42F529D38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Receiver.Core", "Reminder.Receiver.Core\Reminder.Receiver.Core.csproj", "{55C1E9C0-D2E1-41B6-BDCF-4E1C9CE98842}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Receiver.Telegram", "Reminder.Receiver.Telegram\Reminder.Receiver.Telegram.csproj", "{A3132FBC-804C-4470-85F9-3E7BE908D8F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Parsing", "Reminder.Parsing\Reminder.Parsing.csproj", "{6D1693EC-8B2B-4BDC-947B-9754B14BA2C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Parsing.Test", "Reminder.Parsing.Test\Reminder.Parsing.Test.csproj", "{232C50F5-6136-48ED-A2BE-0417C0B15B50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReminderApp", "ReminderApp\ReminderApp.csproj", "{6342507F-166C-4A73-9E1C-FB7261D88F72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +59,34 @@ Global
 		{95F509CF-36B0-47FF-BECD-87E38CBE2755}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95F509CF-36B0-47FF-BECD-87E38CBE2755}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95F509CF-36B0-47FF-BECD-87E38CBE2755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9452774B-F964-4088-A22D-C9B29889654C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9452774B-F964-4088-A22D-C9B29889654C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9452774B-F964-4088-A22D-C9B29889654C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9452774B-F964-4088-A22D-C9B29889654C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2F30E30-E621-4CB7-8968-88E42F529D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2F30E30-E621-4CB7-8968-88E42F529D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2F30E30-E621-4CB7-8968-88E42F529D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2F30E30-E621-4CB7-8968-88E42F529D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C1E9C0-D2E1-41B6-BDCF-4E1C9CE98842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C1E9C0-D2E1-41B6-BDCF-4E1C9CE98842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C1E9C0-D2E1-41B6-BDCF-4E1C9CE98842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C1E9C0-D2E1-41B6-BDCF-4E1C9CE98842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3132FBC-804C-4470-85F9-3E7BE908D8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3132FBC-804C-4470-85F9-3E7BE908D8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3132FBC-804C-4470-85F9-3E7BE908D8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3132FBC-804C-4470-85F9-3E7BE908D8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1693EC-8B2B-4BDC-947B-9754B14BA2C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1693EC-8B2B-4BDC-947B-9754B14BA2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1693EC-8B2B-4BDC-947B-9754B14BA2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1693EC-8B2B-4BDC-947B-9754B14BA2C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232C50F5-6136-48ED-A2BE-0417C0B15B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232C50F5-6136-48ED-A2BE-0417C0B15B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232C50F5-6136-48ED-A2BE-0417C0B15B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232C50F5-6136-48ED-A2BE-0417C0B15B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
