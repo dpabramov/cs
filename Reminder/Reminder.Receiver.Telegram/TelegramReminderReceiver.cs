@@ -25,10 +25,11 @@ namespace Reminder.Receiver.Telegram
 
         private void _botClient_OnMessage(object sender, MessageEventArgs e)
         {
-            //все нетекстовые сообщения не обрабатываем
+            //все не текстовые сообщения которые мы отправили в чат не обрабатываем
             if (e.Message.Type != global::Telegram.Bot.Types.Enums.MessageType.Text)
                 return;
 
+            //
             MessageReceived?.Invoke(this,
                                     new MessageReceivedEventArgs
                                     {

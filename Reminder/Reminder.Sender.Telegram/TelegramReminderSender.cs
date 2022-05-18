@@ -8,15 +8,17 @@ namespace Reminder.Sender.Telegram
 {
     public class TelegramReminderSender : IReminderSender
     {
+        //класс, смыст которого - бот отправляет в чат сообщение
         private TelegramBotClient _botClient;
 
-        public TelegramReminderSender(string token)//, IWebProxy proxy = null)
+        public TelegramReminderSender(string token)
         {
-            _botClient = new TelegramBotClient(token);//, proxy);
+            _botClient = new TelegramBotClient(token);
         }
 
         public void Send(string contactId, string message)
         {
+            //берем из библиотеки подключенной к проекту
             var chatId = new global::Telegram.Bot.Types.ChatId(contactId);
 
             _botClient.SendTextMessageAsync(chatId, message);

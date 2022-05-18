@@ -39,19 +39,26 @@ namespace ReminderApp
             //создаем receiver
             var receiver = new TelegramReminderReceiver(token);
 
-            //подписываемся на сообщения приема,
-            //по нему добавляем в хранилище запись
+            //подписываемся на сообщения приема,по нему добавляем в хранилище запись
+            //т.е. человек набрал сообщение в чате по формату и оно попало в хранилище
             receiver.MessageReceived += (object s, MessageReceivedEventArgs e) =>
                    {
                        Console.WriteLine($"Message received: {e.ContactId}\t{e.Message}");
+                       
+                       try
+                       {
+                           ParsedMessage ParsedMessage = MessageParser.Parse(e.Message);
 
-                       ParsedMessage ParsedMessage = MessageParser.Parse(e.Message);
-
-                       ReminderItem reminderItem = new ReminderItem(ParsedMessage.Date,
+                           ReminderItem reminderItem = new ReminderItem(ParsedMessage.Date,
                            ParsedMessage.Message,
                            e.ContactId);
 
-                       storage.Add(reminderItem);
+                           storage.Add(reminderItem);
+                       }
+                       catch
+                       {
+                           Console.WriteLine($"Некорректный формат сообщения {e.Message}");
+                       }
                    };
 
             //стартуем прием сообщений
