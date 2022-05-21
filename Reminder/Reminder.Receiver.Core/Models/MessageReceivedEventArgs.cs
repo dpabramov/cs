@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Reminder.Receiver.Core
+namespace Reminder.Receiver.Core.Models
 {
     public class MessageReceivedEventArgs : EventArgs
     {

@@ -3,6 +3,7 @@ using System.Net;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Reminder.Receiver.Core;
+using Reminder.Receiver.Core.Models;
 
 namespace Reminder.Receiver.Telegram
 {
@@ -29,7 +30,6 @@ namespace Reminder.Receiver.Telegram
             if (e.Message.Type != global::Telegram.Bot.Types.Enums.MessageType.Text)
                 return;
 
-            //
             MessageReceived?.Invoke(this,
                                     new MessageReceivedEventArgs
                                     {

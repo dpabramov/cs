@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Threading;
 using Reminder.Storage.Core;
 using Reminder.Domain.Models;
-
+using Reminder.Receiver.Core;
+using Reminder.Parsing;
+using Reminder.Sender.Core;
 
 namespace Reminder.Domain
 {
@@ -12,6 +14,10 @@ namespace Reminder.Domain
     public class ReminderDomain : IDisposable
     {
         private IReminderStorage _storage;
+
+        private IReminderReceiver _receiver;
+
+        private IReminderSender _sender;
 
         private TimeSpan _periodChangeStatusAwatingToReady;
 
@@ -23,24 +29,109 @@ namespace Reminder.Domain
 
         public Action<ReminderItem> SendReminder;
 
+        public event EventHandler<MessageReceivedEventArgs> MessageReceived;
+
         public event EventHandler<StatusChangedToReadyEventArgs> StatusChangedToReady;
 
         public event EventHandler<SendingSucceededEventArgs> SendingSucceeded;
 
         public event EventHandler<SendingFailedEventArgs> SendingFailed;
 
+        public event EventHandler<MessageParsedSuccededEventArgs> MessageParsedSucceded;
+
+        public event EventHandler<MessageParsedFaultEventArgs> MessageParsedFault;
+
+        public event EventHandler<AddedStorageSuccededEventArgs> AddToStorageSucceded;
+
+        public event EventHandler<AddedStorageFaultEventArgs> AddToStorageFault;
+
         public ReminderDomain(IReminderStorage Storage,
                             TimeSpan PeriodChangeStatusAwatingToReady,
-                            TimeSpan PeriodSentMessage)
+                            TimeSpan PeriodSentMessage,
+                            IReminderReceiver Receiver,
+                            IReminderSender Sender)
         {
             _storage = Storage;
             _periodChangeStatusAwatingToReady = PeriodChangeStatusAwatingToReady;
             _periodSendMessage = PeriodSentMessage;
+            _receiver = Receiver;
+            _sender = Sender;
+
+            _receiver.MessageReceived += (s, e) =>
+            {
+                ParsedMessage p;
+                MessageReceived?.Invoke(this, 
+                    new MessageReceivedEventArgs
+                    {
+                        ContactId = e.ContactId,
+                        Message = e.Message
+                    });
+
+                try
+                {
+                    p = MessageParser.Parse(e.Message);
+
+                    //event сообщение распарсено
+                    MessageParsedSucceded?.Invoke(this,
+                              new MessageParsedSuccededEventArgs
+                              {
+                                  Message = p
+                              });
+                }
+                catch (Exception exception)
+                {
+                    //event сообщение не распарсено
+                    var mpf = new MessageParsedFaultEventArgs
+                    {
+                        MessageParseException = exception
+                    };
+
+                    MessageParsedFault?.Invoke(this, mpf);
+
+                    //дальнейшая обработка сообщения не имее смысл, выходим
+                    return;
+                }
+
+                ReminderItem reminderItem = new ReminderItem(p.Date,
+                    p.Message,
+                    e.ContactId);
+
+                try
+                {
+                    _storage.Add(reminderItem);
+
+                    //event добавлено в хранилище успешно
+                    AddedStorageSuccededEventArgs ass = new AddedStorageSuccededEventArgs
+                    {
+                        ReminderItem = reminderItem
+                    };
+                    AddToStorageSucceded?.Invoke(this, ass);
+                }
+                catch (Exception ex)
+                {
+                    //event ошибка добавлено в хранилище
+                    AddedStorageFaultEventArgs asf = new AddedStorageFaultEventArgs
+                    {
+                        exception = ex
+                    };
+                    AddToStorageFault?.Invoke(this, asf);
+                }
+            };
+
+            SendReminder = (ri) =>
+            {
+                _sender.Send(ri.ContactId, ri.Message);
+            };
         }
 
-        public ReminderDomain(IReminderStorage Storage) : this(Storage,
-                                               TimeSpan.FromSeconds(1),
-                                               TimeSpan.FromSeconds(1))
+        public ReminderDomain(IReminderStorage Storage,
+                             IReminderReceiver Receiver,
+                             IReminderSender Sender)
+                      : this(Storage,
+                            TimeSpan.FromSeconds(1),
+                            TimeSpan.FromSeconds(1),
+                            Receiver,
+                            Sender)
         {
         }
 
@@ -55,6 +146,8 @@ namespace Reminder.Domain
                                         null,
                                         TimeSpan.FromSeconds(2),
                                         _periodSendMessage);
+
+            _receiver.Run();
         }
 
         private void SendReadyReminders(object state)

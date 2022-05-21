@@ -1,4 +1,5 @@
 ﻿using System;
+using Reminder.Receiver.Core.Models;
 
 namespace Reminder.Receiver.Core
 {

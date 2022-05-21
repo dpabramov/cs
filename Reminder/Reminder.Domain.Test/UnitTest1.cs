@@ -24,7 +24,7 @@ namespace Reminder.Domain.Test
             using (ReminderDomain reminderDomain = new ReminderDomain(inMemoryReminderStorage))
             {
                 //подписываемся на событие, метод задаем в виде лямбды
-                reminderDomain.StatusChangedToReady += 
+                reminderDomain.StatusChangedToReady +=
                     (Object sender, StatusChangedToReadyEventArgs args) => isReadyStatus = true;
 
                 reminderDomain.Run();
