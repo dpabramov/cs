@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 using Reminder.Domain;
 using Reminder.Domain.Models;
 using Reminder.Receiver.Telegram;
@@ -24,50 +25,63 @@ namespace ReminderApp
             //подписываемся на событие получения сообщения
             domain.MessageReceived += (object sender, MessageReceivedEventArgs e) =>
             {
-                Console.WriteLine($"Message Received\t" +
-                                            $"Contact:{e.ContactId}\t" +
-                                            $"Текст: {e.Message}");
+                //Console.WriteLine($"Message Received\t" +
+                //                            $"Contact:{e.ContactId}\t" +
+                //                            $"Текст: {e.Message}");
+
+                Console.WriteLine($"Message Received\t{JsonConvert.SerializeObject(e)}");
             };
 
             //подписываемся на сообщения успешного парсинга для отображения в консоли
             domain.MessageParsedSucceded += (s, e) =>
                         {
-                            Console.WriteLine($"Parsing Succeded\t" +
-                                            $"Дата:{e.Message.Date}\t" +
-                                            $"Текст: {e.Message.Message}");
+                            //Console.WriteLine($"Parsing Succeded\t" +
+                            //                $"Дата:{e.Message.Date}\t" +
+                            //                $"Текст: {e.Message.Message}");
+
+                            Console.WriteLine($"Parsing Succeded\t{JsonConvert.SerializeObject(e)}");
                         };
 
             //подписываемся на сообщения сбоя парсинга для отображения в консоли
             domain.MessageParsedFault += (s, e) =>
                         {
-                            Console.WriteLine($"Parsing Fault\t" +
-                            $"{e.MessageParseException.Message}");
+                            Console.WriteLine($"Parsing Fault\t{JsonConvert.SerializeObject(e)}");
                         };
 
             //подписываемся на сообщения успешного добавления в хранилище 
             //для отображения в консоли
             domain.AddToStorageSucceded += (s, e) =>
                         {
+                            //Console.WriteLine($"Added to storage successfuly\t" +
+                            //            $"{e.ReminderItem.Id}\t" +
+                            //            $"{e.ReminderItem.ContactId}\t" +
+                            //            $"{e.ReminderItem.Date}\t" +
+                            //            $"{e.ReminderItem.Message}\t" +
+                            //            $"{e.ReminderItem.Status}");
+
                             Console.WriteLine($"Added to storage successfuly\t" +
-                                $"{e.ReminderItem.ContactId}\t" +
-                                        $"{e.ReminderItem.Date}\t" +
-                                        $"{e.ReminderItem.Message}\t" +
-                                        $"{e.ReminderItem.Status}");
+                                $"{JsonConvert.SerializeObject(e)}");
                         };
 
-            //подписываемся на сообщения успешного добавления в хранилище 
+            //подписываемся на сообщения не успешного добавления в хранилище 
             //для отображения в консоли
             domain.AddToStorageFault += (object s, AddedStorageFaultEventArgs e) =>
                         {
-                            Console.WriteLine($"Add to storage Fault\t" +
-                                               $"{e.exception.Message}");
+                            //Console.WriteLine($"Add to storage Fault\t" +
+                            //    $"{e.Reminder.Id}\t" +
+                            //    $"{e.Reminder.ContactId}\t" +
+                            //    $"{e.Reminder.Date}\t" +
+                            //    $"{e.Reminder.Message}\t" +
+                            //    $"{e.Reminder.Status}\t" +
+                            //    $"{e.Except.Message}");
+
+                            Console.WriteLine($"Add to storage Fault\t{JsonConvert.SerializeObject(e)}");
                         };
 
             //подписываемся на сообщения успешной отправки 
             domain.SendingSucceeded += (object sender, SendingSucceededEventArgs e) =>
             {
-                Console.WriteLine($"Sending message succeded\t" +
-                                                        $"{e.Item.Message}");
+                Console.WriteLine($"Sending message succeded\t{JsonConvert.SerializeObject(e)}");
             };
 
             //стартуем отправку  и прием сообщений

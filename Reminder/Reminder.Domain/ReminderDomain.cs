@@ -110,9 +110,11 @@ namespace Reminder.Domain
                 catch (Exception ex)
                 {
                     //event ошибка добавлено в хранилище
-                    AddedStorageFaultEventArgs asf = new AddedStorageFaultEventArgs
+                    var asf = new AddedStorageFaultEventArgs
                     {
-                        exception = ex
+                        Reminder = reminderItem,
+
+                        Except = ex
                     };
                     AddToStorageFault?.Invoke(this, asf);
                 }

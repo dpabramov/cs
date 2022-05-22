@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Reminder.Storage.Core;
+using System;
 
 namespace Reminder.Domain
 {
     public class AddedStorageFaultEventArgs: EventArgs
     {
-        public Exception exception;
+        public ReminderItem Reminder;
+
+        public Exception Except;
     }
 }
