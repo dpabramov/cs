@@ -23,72 +23,57 @@ namespace ReminderApp
                                 new TelegramReminderSender(token));
 
             //подписываемся на событие получения сообщения
-            domain.MessageReceived += (object sender, MessageReceivedEventArgs e) =>
-            {
-                //Console.WriteLine($"Message Received\t" +
-                //                            $"Contact:{e.ContactId}\t" +
-                //                            $"Текст: {e.Message}");
+            domain.MessageReceived += (sender, e) =>
+                        {
+                            Console.WriteLine($"Message Received\t{JsonConvert.SerializeObject(e)}");
+                        };
 
-                Console.WriteLine($"Message Received\t{JsonConvert.SerializeObject(e)}");
-            };
-
-            //подписываемся на сообщения успешного парсинга для отображения в консоли
+            //подписываемся на сообщения успешного парсинга
             domain.MessageParsedSucceded += (s, e) =>
                         {
-                            //Console.WriteLine($"Parsing Succeded\t" +
-                            //                $"Дата:{e.Message.Date}\t" +
-                            //                $"Текст: {e.Message.Message}");
-
                             Console.WriteLine($"Parsing Succeded\t{JsonConvert.SerializeObject(e)}");
                         };
 
-            //подписываемся на сообщения сбоя парсинга для отображения в консоли
+            //подписываемся на сообщения сбоя парсинга
             domain.MessageParsedFault += (s, e) =>
                         {
-                            Console.WriteLine($"Parsing Fault\t{JsonConvert.SerializeObject(e)}");
+                            string message = $"Parsing Fault\t{JsonConvert.SerializeObject(e)}";
+                            WriteToConsoleWithRed(message);
                         };
 
             //подписываемся на сообщения успешного добавления в хранилище 
-            //для отображения в консоли
             domain.AddToStorageSucceded += (s, e) =>
                         {
-                            //Console.WriteLine($"Added to storage successfuly\t" +
-                            //            $"{e.ReminderItem.Id}\t" +
-                            //            $"{e.ReminderItem.ContactId}\t" +
-                            //            $"{e.ReminderItem.Date}\t" +
-                            //            $"{e.ReminderItem.Message}\t" +
-                            //            $"{e.ReminderItem.Status}");
-
                             Console.WriteLine($"Added to storage successfuly\t" +
-                                $"{JsonConvert.SerializeObject(e)}");
+                               $"{JsonConvert.SerializeObject(e)}");
                         };
 
             //подписываемся на сообщения не успешного добавления в хранилище 
-            //для отображения в консоли
             domain.AddToStorageFault += (object s, AddedStorageFaultEventArgs e) =>
                         {
-                            //Console.WriteLine($"Add to storage Fault\t" +
-                            //    $"{e.Reminder.Id}\t" +
-                            //    $"{e.Reminder.ContactId}\t" +
-                            //    $"{e.Reminder.Date}\t" +
-                            //    $"{e.Reminder.Message}\t" +
-                            //    $"{e.Reminder.Status}\t" +
-                            //    $"{e.Except.Message}");
-
-                            Console.WriteLine($"Add to storage Fault\t{JsonConvert.SerializeObject(e)}");
+                            string message = $"Add to storage Fault\t{JsonConvert.SerializeObject(e)}";
+                            WriteToConsoleWithRed(message);
                         };
 
             //подписываемся на сообщения успешной отправки 
             domain.SendingSucceeded += (object sender, SendingSucceededEventArgs e) =>
-            {
-                Console.WriteLine($"Sending message succeded\t{JsonConvert.SerializeObject(e)}");
-            };
+                        {
+                            Console.WriteLine($"Sending message succeded\t{JsonConvert.SerializeObject(e)}");
+                        };
 
-            //стартуем отправку  и прием сообщений
+            //стартуем все
             domain.Run();
 
             Console.WriteLine("Нажмите любую клавишу для завершения работы");
             Console.ReadKey();
+        }
+
+        public static void WriteToConsoleWithRed(string text)
+        {
+            var remember = Console.ForegroundColor;
+            Console.ForegroundColor = System.ConsoleColor.Red;
+            Console.WriteLine(text);
+            Console.ForegroundColor = remember;
         }
     }
 }

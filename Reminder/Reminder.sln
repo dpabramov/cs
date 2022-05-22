@@ -17,17 +17,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Domain.Test", "Rem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Sender.Core", "Reminder.Sender.Core\Reminder.Sender.Core.csproj", "{9452774B-F964-4088-A22D-C9B29889654C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Sender.Telegram", "Reminder.Sender.Telegram\Reminder.Sender.Telegram.csproj", "{E2F30E30-E621-4CB7-8968-88E42F529D38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Sender.Telegram", "Reminder.Sender.Telegram\Reminder.Sender.Telegram.csproj", "{E2F30E30-E621-4CB7-8968-88E42F529D38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Receiver.Core", "Reminder.Receiver.Core\Reminder.Receiver.Core.csproj", "{55C1E9C0-D2E1-41B6-BDCF-4E1C9CE98842}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Receiver.Core", "Reminder.Receiver.Core\Reminder.Receiver.Core.csproj", "{55C1E9C0-D2E1-41B6-BDCF-4E1C9CE98842}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Receiver.Telegram", "Reminder.Receiver.Telegram\Reminder.Receiver.Telegram.csproj", "{A3132FBC-804C-4470-85F9-3E7BE908D8F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Receiver.Telegram", "Reminder.Receiver.Telegram\Reminder.Receiver.Telegram.csproj", "{A3132FBC-804C-4470-85F9-3E7BE908D8F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Parsing", "Reminder.Parsing\Reminder.Parsing.csproj", "{6D1693EC-8B2B-4BDC-947B-9754B14BA2C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Parsing", "Reminder.Parsing\Reminder.Parsing.csproj", "{6D1693EC-8B2B-4BDC-947B-9754B14BA2C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Parsing.Test", "Reminder.Parsing.Test\Reminder.Parsing.Test.csproj", "{232C50F5-6136-48ED-A2BE-0417C0B15B50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Parsing.Test", "Reminder.Parsing.Test\Reminder.Parsing.Test.csproj", "{232C50F5-6136-48ED-A2BE-0417C0B15B50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReminderApp", "ReminderApp\ReminderApp.csproj", "{6342507F-166C-4A73-9E1C-FB7261D88F72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReminderApp", "ReminderApp\ReminderApp.csproj", "{6342507F-166C-4A73-9E1C-FB7261D88F72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleColor", "ConsoleColor\ConsoleColor.csproj", "{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
