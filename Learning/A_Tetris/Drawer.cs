@@ -7,24 +7,32 @@ using System.Threading.Tasks;
 
 namespace A_Tetris
 {
-    class Drawer
+    public class Drawer
     {
-        //public Graphics gr = new Graphics(); // Для рисования поля на PictureBox
+        Graphics _gr; // Для рисования поля на PictureBox
 
-        public void DrawFromImage(Bitmap bitmap, Graphics gr)
+        TetrisField _tetrisField;  //карта
+
+        Shape _shape;  //фигурка
+
+        public Drawer()  //фигурка
         {
-            gr = Graphics.FromImage(bitmap);
+            //_gr = new Graphics();
+        }
+
+        public void DrawFromImage(Bitmap bitmap)
+        {
+            _gr = Graphics.FromImage(bitmap);
         }
 
         public void FillField(System.Windows.Forms.PictureBox pictureBox,
             TetrisField tetrisField, 
-            Shape shape,
-            Graphics gr)
+            Shape shape)
         {
             //формируем картинку
 
             //заливаем фон
-            gr.Clear(Color.White);
+            _gr.Clear(Color.Black);
 
             int k = tetrisField.PixelSize;
 
@@ -33,16 +41,16 @@ namespace A_Tetris
                 for (int j = 0; j < tetrisField.FieldHeight; j++)
                 {
                     if (tetrisField.Field[i, j] == 1)
-                        gr.FillRectangle(Brushes.Green, i * k, j * k, k, k);
+                        _gr.FillRectangle(Brushes.Green, i * k, j * k, k, k);
                     //горизонтали и вертикали
-                    gr.DrawRectangle(Pens.Gray, i * k, j * k, k, k);
+                    _gr.DrawRectangle(Pens.Gray, i * k, j * k, k, k);
                 }
 
             //добавим фигурку
             for (int i = 0; i < shape.Figure.GetLength(1); i++)
             {
-                gr.FillRectangle(Brushes.Red, shape.Figure[1, i] * k, shape.Figure[0, i] * k, k, k);
-                gr.DrawRectangle(Pens.Gray, shape.Figure[1, i] * k, shape.Figure[0, i] * k, k, k);
+                _gr.FillRectangle(Brushes.Red, shape.Figure[1, i] * k, shape.Figure[0, i] * k, k, k);
+                _gr.DrawRectangle(Pens.Gray, shape.Figure[1, i] * k, shape.Figure[0, i] * k, k, k);
             }
 
             //рисуем

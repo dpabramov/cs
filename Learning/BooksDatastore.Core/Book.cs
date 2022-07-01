@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace _22_WebApplication1.Models
+namespace BooksDatastore.Core
 {
-    public class City
+    public class Book
     {
         public int Id;
 
         public string Name;
 
-        public string Description;
+        public string Author;
 
-        public int NumberOfPointsOfInterest;
+        public DateTimeOffset YearProduction;
+
+        public int Pages; 
+
+
     }
 }

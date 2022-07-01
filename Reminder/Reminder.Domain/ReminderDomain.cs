@@ -27,7 +27,7 @@ namespace Reminder.Domain
 
         private Timer _timerSendMessage;
 
-        public Action<ReminderItem> SendReminder;
+        public Action<ReminderItem> SendReminder => (ri) => _sender.Send(ri.ContactId, ri.Message);
 
         public event EventHandler<MessageReceivedEventArgs> MessageReceived;
 
@@ -57,73 +57,77 @@ namespace Reminder.Domain
             _receiver = Receiver;
             _sender = Sender;
 
-            _receiver.MessageReceived += (s, e) =>
+            _receiver.MessageReceived += Receiver_MessageReceived;
+        }
+
+        private void Receiver_MessageReceived(object sender, Receiver.Core.Models.MessageReceivedEventArgs e)
+        {
+            ParsedMessage p;
+
+            MessageReceivedFireEvent(e.ContactId, e.Message);
+
+            try
             {
-                ParsedMessage p;
-                MessageReceived?.Invoke(this, 
-                    new MessageReceivedEventArgs
-                    {
-                        ContactId = e.ContactId,
-                        Message = e.Message
-                    });
+                p = MessageParser.Parse(e.Message);
+                MessageParsedSuccededFireEvent(p);
+            }
+            catch (Exception exception)
+            {
+                MessageParsedFaultFireEvent(exception);
+                return;
+            }
 
-                try
-                {
-                    p = MessageParser.Parse(e.Message);
+            ReminderItem reminderItem = new ReminderItem(p.Date,
+                p.Message,
+                e.ContactId);
 
-                    //event сообщение распарсено
-                    MessageParsedSucceded?.Invoke(this,
+            try
+            {
+                _storage.Add(reminderItem);
+                AddToStorageSuccededFireEvent(reminderItem);
+            }
+            catch (Exception ex)
+            {
+                AddToStorageFaultFireEvent(reminderItem, ex);
+            }
+        }
+
+        private void AddToStorageFaultFireEvent(ReminderItem reminderItem, Exception ex)
+        {
+            AddToStorageFault?.Invoke(this, new AddedStorageFaultEventArgs(reminderItem, ex));
+        }
+
+        private void AddToStorageSuccededFireEvent(ReminderItem reminderItem)
+        {
+            AddToStorageSucceded?.Invoke(this, new AddedStorageSuccededEventArgs(reminderItem));
+        }
+
+        private void MessageParsedFaultFireEvent(Exception exception)
+        {
+            MessageParsedFault?.Invoke(this,
+                                            new MessageParsedFaultEventArgs
+                                            {
+                                                MessageParseException = exception
+                                            });
+        }
+
+        private void MessageParsedSuccededFireEvent(ParsedMessage p)
+        {
+            MessageParsedSucceded?.Invoke(this,
                               new MessageParsedSuccededEventArgs
                               {
                                   Message = p
                               });
-                }
-                catch (Exception exception)
-                {
-                    //event сообщение не распарсено
-                    var mpf = new MessageParsedFaultEventArgs
+        }
+
+        private void MessageReceivedFireEvent(string contactId, string message)
+        {
+            MessageReceived?.Invoke(this,
+                    new MessageReceivedEventArgs
                     {
-                        MessageParseException = exception
-                    };
-
-                    MessageParsedFault?.Invoke(this, mpf);
-
-                    //дальнейшая обработка сообщения не имее смысл, выходим
-                    return;
-                }
-
-                ReminderItem reminderItem = new ReminderItem(p.Date,
-                    p.Message,
-                    e.ContactId);
-
-                try
-                {
-                    _storage.Add(reminderItem);
-
-                    //event добавлено в хранилище успешно
-                    AddedStorageSuccededEventArgs ass = new AddedStorageSuccededEventArgs
-                    {
-                        ReminderItem = reminderItem
-                    };
-                    AddToStorageSucceded?.Invoke(this, ass);
-                }
-                catch (Exception ex)
-                {
-                    //event ошибка добавлено в хранилище
-                    var asf = new AddedStorageFaultEventArgs
-                    {
-                        Reminder = reminderItem,
-
-                        Except = ex
-                    };
-                    AddToStorageFault?.Invoke(this, asf);
-                }
-            };
-
-            SendReminder = (ri) =>
-            {
-                _sender.Send(ri.ContactId, ri.Message);
-            };
+                        ContactId = contactId,
+                        Message = message
+                    });
         }
 
         public ReminderDomain(IReminderStorage Storage,

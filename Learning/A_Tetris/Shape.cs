@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace A_Tetris
 {
-    class Shape
+    public class Shape
     {
         //Массив поля
         TetrisField _tetrisField;
 
-        //Массив для хранения падающей фигурки
+        //Массив для хранения фигурки
         public int[,] Figure = new int[2, 4];
 
         public Shape(TetrisField tetrisField)

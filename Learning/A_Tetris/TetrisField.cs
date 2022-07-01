@@ -15,8 +15,10 @@ namespace A_Tetris
         //Битовая матрица для прорисовки на форме
         public Bitmap Bitfield;
 
+        //ширина поля в клетках
         public int FieldWidth => (int)Field.GetLongLength(0);
 
+        //глубина поля к клетках
         public int FieldHeight => (int)Field.GetLongLength(1);
 
         public int BitfieldWidth => Bitfield.Width;
@@ -32,11 +34,13 @@ namespace A_Tetris
             Field = new int[width, height];
 
             Bitfield = new Bitmap(pixelSize * width, pixelSize * height);
+
+            InitializeField();
         }
 
         public void InitializeField()
         {
-            //заполним стакан-поле данными
+            //заполним массив поле данными
             for (int i = 0; i < FieldWidth; i++)
                 Field[i, FieldHeight - 1] = 1;
 

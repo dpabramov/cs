@@ -29,13 +29,15 @@ namespace A_Tetris
         {
             InitializeComponent();
 
-            dr = new Drawer();
-            dr.DrawFromImage(tetrisField.Bitfield, gr);
-
             tetrisField = new TetrisField();
-            tetrisField.InitializeField();
 
             shape = new Shape(tetrisField);
+
+            dr = new Drawer();
+
+            dr.DrawFromImage(tetrisField.Bitfield, gr);
+
+            
 
             // получим новую фигурку
             shape.NewFigure();

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using CitiesDataStore.InMemory;
+using CitiesDataStore.Core;
 
 namespace _22_WebApplication1
 {
@@ -23,6 +20,9 @@ namespace _22_WebApplication1
                 //для ответа в том формате в котором попросили в заголовке Accept
                 .AddMvcOptions(o => o.OutputFormatters
                 .Add(new XmlDataContractSerializerOutputFormatter()));
+            
+            //реализуем синглтон средствами MVC
+            services.AddSingleton<ICitiesDataStore>(new InMemoryDataStore());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
