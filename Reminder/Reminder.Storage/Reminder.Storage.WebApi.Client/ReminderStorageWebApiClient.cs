@@ -14,7 +14,7 @@ namespace Reminder.Storage.WebApi.Client
     public class ReminderStorageWebApiClient : IReminderStorage
     {
         //базовая часть урла, что-то типа "https://localhost:5001"
-        private string _baseWebApiUrl;
+        private readonly string _baseWebApiUrl;
 
         //для отправки HTTP-запросов и получения HTTP-ответов 
         private HttpClient _httpClient;
