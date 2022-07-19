@@ -3,14 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1800
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.Core", "Reminder.Storage.Core\Reminder.Storage.Core.csproj", "{A2D1DD14-C9EF-44B2-B1FC-96013C63432B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.InMemory", "Reminder.Storage.InMemory\Reminder.Storage.InMemory.csproj", "{C0E3F016-ABAF-418C-B5C5-FCFB5DF46D21}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.Core.Test", "Reminder.Storage.Core.Test\Reminder.Storage.Core.Test.csproj", "{2F77DD43-2DFE-46D3-8A6F-29E4CFA60B74}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.InMemory.Test", "Reminder.Storage.InMemory.Test\Reminder.Storage.InMemory.Test.csproj", "{4D6CF371-5B60-4821-9613-FB28A1501813}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Domain", "Reminder.Domain\Reminder.Domain.csproj", "{AFE27018-1969-49D3-99C3-6AE7B659391F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Domain.Test", "Reminder.Domain.Test\Reminder.Domain.Test.csproj", "{95F509CF-36B0-47FF-BECD-87E38CBE2755}"
@@ -27,9 +19,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Parsing", "Reminde
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Parsing.Test", "Reminder.Parsing.Test\Reminder.Parsing.Test.csproj", "{232C50F5-6136-48ED-A2BE-0417C0B15B50}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReminderApp", "ReminderApp\ReminderApp.csproj", "{6342507F-166C-4A73-9E1C-FB7261D88F72}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleColor", "ConsoleColor\ConsoleColor.csproj", "{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.WebApi.Core", "..\Reminder.Storage\Reminder.Storage.WebApi.Core\Reminder.Storage.WebApi.Core.csproj", "{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.WebApi.Client", "..\Reminder.Storage\Reminder.Storage.WebApi.Client\Reminder.Storage.WebApi.Client.csproj", "{D683A209-4E9A-46AB-870D-30CCD6FD65EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.App", "Reminder.App\Reminder.App.csproj", "{C497C545-9F22-4BFE-BD8D-DF0B2EDE905F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.App.Debug", "Reminder.App.Debug\Reminder.App.Debug.csproj", "{569EDC51-DE00-4A41-88A3-95C21924AD0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,22 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A2D1DD14-C9EF-44B2-B1FC-96013C63432B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2D1DD14-C9EF-44B2-B1FC-96013C63432B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2D1DD14-C9EF-44B2-B1FC-96013C63432B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2D1DD14-C9EF-44B2-B1FC-96013C63432B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0E3F016-ABAF-418C-B5C5-FCFB5DF46D21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0E3F016-ABAF-418C-B5C5-FCFB5DF46D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0E3F016-ABAF-418C-B5C5-FCFB5DF46D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0E3F016-ABAF-418C-B5C5-FCFB5DF46D21}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F77DD43-2DFE-46D3-8A6F-29E4CFA60B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F77DD43-2DFE-46D3-8A6F-29E4CFA60B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F77DD43-2DFE-46D3-8A6F-29E4CFA60B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F77DD43-2DFE-46D3-8A6F-29E4CFA60B74}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D6CF371-5B60-4821-9613-FB28A1501813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D6CF371-5B60-4821-9613-FB28A1501813}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D6CF371-5B60-4821-9613-FB28A1501813}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D6CF371-5B60-4821-9613-FB28A1501813}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AFE27018-1969-49D3-99C3-6AE7B659391F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AFE27018-1969-49D3-99C3-6AE7B659391F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFE27018-1969-49D3-99C3-6AE7B659391F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -85,14 +67,26 @@ Global
 		{232C50F5-6136-48ED-A2BE-0417C0B15B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{232C50F5-6136-48ED-A2BE-0417C0B15B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{232C50F5-6136-48ED-A2BE-0417C0B15B50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6342507F-166C-4A73-9E1C-FB7261D88F72}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D683A209-4E9A-46AB-870D-30CCD6FD65EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D683A209-4E9A-46AB-870D-30CCD6FD65EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D683A209-4E9A-46AB-870D-30CCD6FD65EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D683A209-4E9A-46AB-870D-30CCD6FD65EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C497C545-9F22-4BFE-BD8D-DF0B2EDE905F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C497C545-9F22-4BFE-BD8D-DF0B2EDE905F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C497C545-9F22-4BFE-BD8D-DF0B2EDE905F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C497C545-9F22-4BFE-BD8D-DF0B2EDE905F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{569EDC51-DE00-4A41-88A3-95C21924AD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{569EDC51-DE00-4A41-88A3-95C21924AD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{569EDC51-DE00-4A41-88A3-95C21924AD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{569EDC51-DE00-4A41-88A3-95C21924AD0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

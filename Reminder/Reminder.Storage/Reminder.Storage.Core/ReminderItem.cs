@@ -4,7 +4,7 @@ namespace Reminder.Storage.Core
 {
     public class ReminderItem
     {
-        public Guid Id { get; } //идентификатор объекта
+        public Guid Id { get; set; } //идентификатор объекта
 
         public DateTimeOffset Date { get; set; } //время будильника
 
@@ -18,19 +18,22 @@ namespace Reminder.Storage.Core
 
         public TimeSpan TimeToAlarm => Date - DateTimeOffset.Now;
 
-        public ReminderItem(DateTimeOffset date, string message, string contactId)
+        public ReminderItem(Guid id, 
+                            DateTimeOffset date, 
+                            string message, 
+                            string contactId, 
+                            ReminderItemStatus status)
         {
-            Id = Guid.NewGuid();
+            Id = id;
             Date = date;
             Message = message;
             ContactId = contactId;
-            Status = ReminderItemStatus.Awaiting;
+            Status = status;
         }
 
-        //public ReminderItem()
-        //{
-
-        //}
+        public ReminderItem()
+        {
+        }
     }
 }
 

@@ -77,18 +77,28 @@ namespace Reminder.Domain
                 return;
             }
 
-            ReminderItem reminderItem = new ReminderItem(p.Date,
-                p.Message,
-                e.ContactId);
+            //ReminderItem reminderItem = new ReminderItem(Guid.NewGuid(), 
+            //                    p.Date,
+            //                    p.Message,
+            //                    e.ContactId, 
+            //                    ReminderItemStatus.Awaiting);
 
             try
             {
-                _storage.Add(reminderItem);
-                AddToStorageSuccededFireEvent(reminderItem);
+                var id = _storage.Add(p.Date, p.Message, e.ContactId, ReminderItemStatus.Awaiting);
+                AddToStorageSuccededFireEvent(_storage.Get(id));
             }
             catch (Exception ex)
             {
-                AddToStorageFaultFireEvent(reminderItem, ex);
+                AddToStorageFaultFireEvent(new ReminderItem
+                    {
+                        Id = Guid.NewGuid(),
+                        Date = p.Date,
+                        Message = p.Message,
+                        ContactId = e.ContactId,
+                        Status = ReminderItemStatus.Awaiting
+                    },
+                                           ex);
             }
         }
 

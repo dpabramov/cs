@@ -5,6 +5,7 @@ using Reminder.Domain.Models;
 using Reminder.Receiver.Telegram;
 using Reminder.Sender.Telegram;
 using Reminder.Storage.InMemory;
+using Reminder.Storage.WebApi.Client;
 
 namespace ReminderApp
 {
@@ -18,7 +19,8 @@ namespace ReminderApp
             string token = "5311806749:AAHycjD4JaEckAHEeqI8Pdt-WkRbc6FGusY";
             //IWebProxy proxy = null;//new HttpToSocks5Proxy("proxy.golyakov.net", 1080);
 
-            var domain = new ReminderDomain(new InMemoryReminderStorage(),
+            var domain = new ReminderDomain(new ReminderStorageWebApiClient("https://localhost:5001"),
+            //var domain = new ReminderDomain(new InMemoryReminderStorage(),
                                 new TelegramReminderReceiver(token),
                                 new TelegramReminderSender(token));
 

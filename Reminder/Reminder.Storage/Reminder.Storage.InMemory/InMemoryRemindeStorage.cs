@@ -16,9 +16,22 @@ namespace Reminder.Storage.InMemory
             reminders = new Dictionary<Guid, ReminderItem>();
         }
 
-        public void Add(ReminderItem reminderItem)
+        public Guid Add(ReminderItem reminderItem)
         {
             reminders.Add(reminderItem.Id, reminderItem);
+
+            return reminderItem.Id;
+        }
+
+        public Guid Add(DateTimeOffset date, string message, string contactId, ReminderItemStatus status)
+        {
+            Guid id = Guid.NewGuid();
+
+            ReminderItem reminderItem = new ReminderItem(id, date, message, contactId, status);
+
+            reminders.Add(id, reminderItem);
+
+            return reminderItem.Id;
         }
 
         public ReminderItem Get(Guid guid)

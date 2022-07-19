@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Reminder.Storage\Reminder.Storage.WebApi.Client\Reminder.Storage.WebApi.Client.csproj" />
+    <ProjectReference Include="..\..\Reminder.Storage\Reminder.Storage.WebApi.Core\Reminder.Storage.WebApi.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Reminder.Storage.Core">
+      <HintPath>..\..\Reminder.Storage\Reminder.Storage.Core\bin\Debug\netstandard2.0\Reminder.Storage.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Reminder.Storage.InMemory">
+      <HintPath>..\..\Reminder.Storage\Reminder.Storage.InMemory\bin\Debug\netstandard2.0\Reminder.Storage.InMemory.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -6,7 +6,10 @@ namespace Reminder.Storage.Core
 {
     public interface IReminderStorage
     {
-        void Add(ReminderItem reminderItem);
+        Guid Add(DateTimeOffset date,
+                 string message,
+                 string contactId,
+                 ReminderItemStatus status);
 
         void Update(Guid guid, ReminderItemStatus status);
 
