@@ -11,7 +11,8 @@ namespace igData
         {
             Churns churns = new Churns();
 
-            churns.LoadFromCsv(@"C:\temp\churn.csv");
+            churns.LoadFromCsv(
+                @"C:\Users\admin\source\repos\Igor\Ig.Core\Import\churn.csv");
 
             ////доли ушедших клиентов
             //foreach(Churn churn in churns)
