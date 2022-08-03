@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1800
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnLineStore.Core", "OnLineStore.Core\OnLineStore.Core.csproj", "{0787CB55-53CE-4AC1-91A6-911DB25FBCF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnLineStore.App", "OnLineStore.App\OnLineStore.App.csproj", "{DA657DA8-EA05-47C2-87A2-D3AF8DC2E8A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0787CB55-53CE-4AC1-91A6-911DB25FBCF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0787CB55-53CE-4AC1-91A6-911DB25FBCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0787CB55-53CE-4AC1-91A6-911DB25FBCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0787CB55-53CE-4AC1-91A6-911DB25FBCF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA657DA8-EA05-47C2-87A2-D3AF8DC2E8A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA657DA8-EA05-47C2-87A2-D3AF8DC2E8A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA657DA8-EA05-47C2-87A2-D3AF8DC2E8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA657DA8-EA05-47C2-87A2-D3AF8DC2E8A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FC3F61A-D5FF-494C-B712-AD90DF36613D}
+	EndGlobalSection
+EndGlobal

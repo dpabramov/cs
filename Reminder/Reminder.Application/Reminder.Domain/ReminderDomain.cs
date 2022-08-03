@@ -91,13 +91,13 @@ namespace Reminder.Domain
             catch (Exception ex)
             {
                 AddToStorageFaultFireEvent(new ReminderItem
-                    {
-                        Id = Guid.NewGuid(),
-                        Date = p.Date,
-                        Message = p.Message,
-                        ContactId = e.ContactId,
-                        Status = ReminderItemStatus.Awaiting
-                    },
+                {
+                    Id = Guid.NewGuid(),
+                    Date = p.Date,
+                    Message = p.Message,
+                    ContactId = e.ContactId,
+                    Status = ReminderItemStatus.Awaiting
+                },
                                            ex);
             }
         }
@@ -174,6 +174,9 @@ namespace Reminder.Domain
 
             List<ReminderItem> readyReminders = _storage.Get(ReminderItemStatus.Ready);
 
+            if (readyReminders == null)
+                return;
+
             foreach (var reminder in readyReminders)
             {
                 //если в sendere отправить не получится, то там бросим Exception
@@ -213,6 +216,9 @@ namespace Reminder.Domain
         private void ChangeStatusToReady(object state)
         {
             List<ReminderItem> reminders = _storage.Get(ReminderItemStatus.Awaiting);
+
+            if (reminders == null)
+                return;
 
             foreach (var reminder in reminders)
             {

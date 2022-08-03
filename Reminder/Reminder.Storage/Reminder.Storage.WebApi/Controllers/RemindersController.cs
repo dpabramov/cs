@@ -25,9 +25,9 @@ namespace Reminder.Storage.WebApi.Controllers
                 return BadRequest(ModelState);
 
 
-            Guid id = _reminderStorage.Add(AddModel.Date, 
-                                            AddModel.Message, 
-                                            AddModel.ContactId, 
+            Guid id = _reminderStorage.Add(AddModel.Date,
+                                            AddModel.Message,
+                                            AddModel.ContactId,
                                             ReminderItemStatus.Awaiting);
 
             return Created($"{id}", new ReminderItemGetModel(_reminderStorage.Get(id)));
@@ -78,12 +78,13 @@ namespace Reminder.Storage.WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            ReminderItem ri = _reminderStorage.Get(UpdateModel.Id);
-
-            if (ri == null)
+            if (_reminderStorage.Get(UpdateModel.Id) == null)
                 return NotFound();
 
-            ri.Status = UpdateModel.Status;
+            //ri.Status = UpdateModel.Status;
+            _reminderStorage.Update(UpdateModel.Id, UpdateModel.Status);
+
+            ReminderItem ri = _reminderStorage.Get(UpdateModel.Id);
 
             return Ok(new ReminderItemGetModel(ri));
         }

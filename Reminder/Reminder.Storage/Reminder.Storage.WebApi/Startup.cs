@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Reminder.Storage.Core;
 using Reminder.Storage.InMemory;
+using Reminder.Storage.SqlServer.ADO;
 
 namespace Reminder.Storage.WebApi
 {
@@ -19,7 +20,9 @@ namespace Reminder.Storage.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_2);
 
-            services.AddSingleton<IReminderStorage>(new InMemoryReminderStorage());
+            //services.AddSingleton<IReminderStorage>(new InMemoryReminderStorage());
+            services.AddSingleton<IReminderStorage>(new SqlServerReminderStorage());
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
