@@ -21,6 +21,6 @@ create table Reminder (
 						contact_id nvarchar(max) not null,
 						status int not null,
 						constraint Pk_Reminder primary key clustered (id),
-						constraint Fk__Reminder_Status foreign key (status) references dbo.Status (Id), 
+						constraint Fk__Reminder_Status foreign key (status) references dbo.Status (Id) 
 					  )
 go

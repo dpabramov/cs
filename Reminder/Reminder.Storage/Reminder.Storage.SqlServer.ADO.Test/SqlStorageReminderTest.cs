@@ -8,9 +8,12 @@ namespace Reminder.Storage.SqlServer.ADO.Test
     [TestClass]
     public class SqlStorageReminderTest
     {
+        //База не рабочая, а тестовая!!!!!!
         private readonly string _connectionString =
             @"Data Source=DESKTOP-EU10JJA\SQLEXPRESS; Initial Catalog=RemindersTest; Integrated Security=true";
 
+        //этот метод будет запускаться перед каждым тестовым методом
+        //и будет пересоздавать таблички, хранимые процедуры и заливать тестовые данные
         [TestInitialize]
         public void TestInitialize()
         {

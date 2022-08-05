@@ -28,21 +28,22 @@ namespace Reminder.Storage.SqlServer.ADO
         {
             using (SqlConnection SqlConection = GetOpenedSqlConnection())
             {
-                Guid guid = Guid.NewGuid();
+                //Guid guid = Guid.NewGuid();
                 
                 SqlCommand command = SqlConection.CreateCommand();
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.CommandText = "dbo.AddReminder";
 
-                command.Parameters.AddWithValue("@id", guid);
+                //command.Parameters.AddWithValue("@id", guid);
                 command.Parameters.AddWithValue("@date", date);
                 command.Parameters.AddWithValue("@message", message);
                 command.Parameters.AddWithValue("@contactId", contactId);
                 command.Parameters.AddWithValue("@status", (int)status);
-                
-                command.ExecuteNonQuery();
 
-                return guid;
+                //command.ExecuteNonQuery();
+
+                //return guid;
+                return (Guid)command.ExecuteScalar();
             }
         }
 
