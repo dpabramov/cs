@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Storage.SqlServer.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.SqlStorage", "Test.SqlStorage\Test.SqlStorage.csproj", "{7F0BA770-C465-4A78-BB6A-4604CB6FE21D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Storage.SqlServer.ADO.Test", "Reminder.Storage.SqlServer.ADO.Test\Reminder.Storage.SqlServer.ADO.Test.csproj", "{08DB5DCC-E534-4942-BC4D-DA61D863EC37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{7F0BA770-C465-4A78-BB6A-4604CB6FE21D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F0BA770-C465-4A78-BB6A-4604CB6FE21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F0BA770-C465-4A78-BB6A-4604CB6FE21D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08DB5DCC-E534-4942-BC4D-DA61D863EC37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08DB5DCC-E534-4942-BC4D-DA61D863EC37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08DB5DCC-E534-4942-BC4D-DA61D863EC37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08DB5DCC-E534-4942-BC4D-DA61D863EC37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

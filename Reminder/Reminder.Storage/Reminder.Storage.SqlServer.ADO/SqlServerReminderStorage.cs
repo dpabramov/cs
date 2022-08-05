@@ -95,7 +95,7 @@ namespace Reminder.Storage.SqlServer.ADO
                 using (var reader = sqlCommand.ExecuteReader())
                 {
                     if (!reader.HasRows)
-                        return null;
+                        return Reminders;
 
                     int idColumnIndex = reader.GetOrdinal("id");
                     int dateColumnIndex = reader.GetOrdinal("date");
