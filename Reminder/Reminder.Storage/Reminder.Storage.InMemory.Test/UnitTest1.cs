@@ -24,13 +24,16 @@ namespace Reminder.Storage.InMemory.Test
         {
             //prepare
             InMemoryReminderStorage irs = new InMemoryReminderStorage();
-            ReminderItem reminderItem = new ReminderItem(DateTimeOffset.Parse("2022-04-22 12:31:04"),
-                                                                               "Закапать капли",
-                                                                               "ADS456N");
+            ReminderItem reminderItem = new ReminderItem(
+                                        Guid.Parse("B0740FE1-6DC8-434B-BA08-AD61AED91226"),
+                                        DateTimeOffset.Parse("2022-04-22 12:31:04"),
+                                        "Закапать капли",
+                                        "ADS456N",
+                                        ReminderItemStatus.Failed);
 
             //do test
             irs.reminders.Add(reminderItem.Id, reminderItem);
-            
+
             //check
             Assert.AreEqual(reminderItem.Id, irs.Get(reminderItem.Id).Id);
             Assert.AreEqual(reminderItem.Date, irs.Get(reminderItem.Id).Date);
@@ -44,16 +47,20 @@ namespace Reminder.Storage.InMemory.Test
         public void Method_Add_Writes_Correct_Data()
         {
             //prepare
+            Guid guid = Guid.Parse("B0740FE1-6DC8-434B-BA08-AD61AED91226");
             InMemoryReminderStorage irs = new InMemoryReminderStorage();
-            ReminderItem reminderItem = new ReminderItem(DateTimeOffset.Parse("2022-04-22 12:31:04"),
-                                                                               "Закапать капли",
-                                                                               "ADS456N");
+            ReminderItem reminderItem = new ReminderItem(   guid,
+                                                            DateTimeOffset.Parse("2022-04-22 12:31:04"),
+                                                            "Закапать капли",
+                                                            "ADS456N",
+                                                            ReminderItemStatus.Failed);
 
             //do test
             irs.Add(reminderItem);
 
             //check
             Assert.IsNotNull(irs.Get(reminderItem.Id));
+            Assert.AreEqual(guid, irs.Get(reminderItem.Id).Id);
             Assert.AreEqual(reminderItem.Date, irs.Get(reminderItem.Id).Date);
             Assert.AreEqual(reminderItem.Message, irs.Get(reminderItem.Id).Message);
             Assert.AreEqual(reminderItem.ContactId, irs.Get(reminderItem.Id).ContactId);
@@ -65,9 +72,12 @@ namespace Reminder.Storage.InMemory.Test
         {
             //prepare
             InMemoryReminderStorage irs = new InMemoryReminderStorage();
-            ReminderItem reminderItem = new ReminderItem(DateTimeOffset.Parse("2022-04-22 12:31:04"),
-                                                                               "Закапать капли",
-                                                                               "ADS456N");
+            Guid guid = Guid.Parse("B0740FE1-6DC8-434B-BA08-AD61AED91227");
+            ReminderItem reminderItem = new ReminderItem(guid,
+                                                        DateTimeOffset.Parse("2022-04-22 12:31:04"),
+                                                        "Закапать капли",
+                                                        "ADS456N",
+                                                        ReminderItemStatus.Awaiting);
             irs.Add(reminderItem);
 
             //do test
@@ -86,17 +96,26 @@ namespace Reminder.Storage.InMemory.Test
         {
             //prepare
             InMemoryReminderStorage irs = new InMemoryReminderStorage();
-            ReminderItem reminderItem = new ReminderItem(DateTimeOffset.Parse("2022-04-22 12:31:04"),
-                                                                               "Закапать капли",
-                                                                               "ADS456N");
+            Guid guid1 = Guid.Parse("B0740FE1-6DC8-434B-BA08-AD61AED91228");
+            Guid guid2 = Guid.Parse("B0740FE1-6DC8-434B-BA08-AD61AED91229");
+            Guid guid3 = Guid.Parse("B0740FE1-6DC8-434B-BA08-AD61AED91220");
+            ReminderItem reminderItem = new ReminderItem(guid1, 
+                                                        DateTimeOffset.Parse("2022-04-22 12:31:04"),
+                                                        "Закапать капли",
+                                                        "ADS456N",
+                                                        ReminderItemStatus.Awaiting);
 
-            ReminderItem reminderItem2 = new ReminderItem(DateTimeOffset.Parse("2022-04-23 12:31:04"),
-                                                                               "Сходить в кино",
-                                                                               "BDS456N");
+            ReminderItem reminderItem2 = new ReminderItem(guid2,
+                                                        DateTimeOffset.Parse("2022-04-23 12:31:04"),
+                                                        "Сходить в кино",
+                                                        "BDS456N",
+                                                        ReminderItemStatus.Awaiting);
 
-            ReminderItem reminderItem3 = new ReminderItem(DateTimeOffset.Parse("2022-04-24 12:31:04"),
-                                                                   "Тренировка",
-                                                                   "CDS456N");
+            ReminderItem reminderItem3 = new ReminderItem(guid3,
+                                                            DateTimeOffset.Parse("2022-04-24 12:31:04"),
+                                                            "Тренировка",
+                                                            "CDS456N",
+                                                            ReminderItemStatus.Awaiting);
             irs.Add(reminderItem);
             irs.Add(reminderItem2);
             irs.Add(reminderItem3);

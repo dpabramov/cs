@@ -21,10 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Parsing.Test", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleColor", "ConsoleColor\ConsoleColor.csproj", "{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.WebApi.Core", "..\Reminder.Storage\Reminder.Storage.WebApi.Core\Reminder.Storage.WebApi.Core.csproj", "{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.Storage.WebApi.Client", "..\Reminder.Storage\Reminder.Storage.WebApi.Client\Reminder.Storage.WebApi.Client.csproj", "{D683A209-4E9A-46AB-870D-30CCD6FD65EA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.App", "Reminder.App\Reminder.App.csproj", "{C497C545-9F22-4BFE-BD8D-DF0B2EDE905F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reminder.App.Debug", "Reminder.App.Debug\Reminder.App.Debug.csproj", "{569EDC51-DE00-4A41-88A3-95C21924AD0F}"
@@ -71,14 +67,6 @@ Global
 		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A4C1B29-4174-44C2-BA7C-5C457E31EFD8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2C99CB7-D780-4DDF-A920-F02BEEC1E1DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D683A209-4E9A-46AB-870D-30CCD6FD65EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D683A209-4E9A-46AB-870D-30CCD6FD65EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D683A209-4E9A-46AB-870D-30CCD6FD65EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D683A209-4E9A-46AB-870D-30CCD6FD65EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C497C545-9F22-4BFE-BD8D-DF0B2EDE905F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C497C545-9F22-4BFE-BD8D-DF0B2EDE905F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C497C545-9F22-4BFE-BD8D-DF0B2EDE905F}.Release|Any CPU.ActiveCfg = Release|Any CPU
