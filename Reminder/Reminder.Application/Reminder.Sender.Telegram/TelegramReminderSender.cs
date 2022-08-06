@@ -8,7 +8,7 @@ namespace Reminder.Sender.Telegram
 {
     public class TelegramReminderSender : IReminderSender
     {
-        //класс, смыст которого - бот отправляет в чат сообщение
+        //класс, смысл которого - бот отправляет в чат сообщение
         private TelegramBotClient _botClient;
 
         public TelegramReminderSender(string token)
