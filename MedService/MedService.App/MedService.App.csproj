@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedService.Core\MedService.Core.csproj" />
+    <ProjectReference Include="..\MedService.Domain\MedService.Domain.csproj" />
+    <ProjectReference Include="..\MedService.Storage.InMemory\MedService.Storage.InMemory.csproj" />
+    <ProjectReference Include="..\MedService.Telegram.Client\MedService.Telegram.Client.csproj" />
+  </ItemGroup>
+
+</Project>

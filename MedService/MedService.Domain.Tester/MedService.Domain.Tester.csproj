@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedService.Domain\MedService.Domain.csproj" />
+    <ProjectReference Include="..\MedService.Receiver.Telegram\MedService.Receiver.Telegram.csproj" />
+    <ProjectReference Include="..\MedService.Sender.Telegram\MedService.Sender.Telegram.csproj" />
+    <ProjectReference Include="..\MedService.Storage.InMemory\MedService.Storage.InMemory.csproj" />
+    <ProjectReference Include="..\MedService.Telegram.Client\MedService.Telegram.Client.csproj" />
+  </ItemGroup>
+
+</Project>

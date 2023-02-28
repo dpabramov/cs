@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=DESKTOP-EU10JJA\\SQLEXPRESS;Database=Shop;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}

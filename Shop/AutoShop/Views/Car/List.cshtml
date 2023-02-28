@@ -1,0 +1,20 @@
+﻿@model ListViewModel
+
+<h3>@Model.Category</h3>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Car car in Model.Cars)
+        {
+            @Html.Partial("AllCars", car);
+        }
+    }
+</div>
+
+
+
+
+
+
+
+
+

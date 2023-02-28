@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonApplication1", "PythonApplication1.pyproj", "{AF7D0969-8F25-4D80-BB26-68FAD5EFD4DC}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "WorksStrings", "..\WorksStrings\WorksStrings.pyproj", "{C5E1593E-9B21-4F72-9457-DEC7E3D3EC3A}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "2_variables", "..\2_variables\2_variables.pyproj", "{4C021D80-C000-45FA-8F50-D3C9FFF54B9B}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "3_Strings", "..\3_Strings\3_Strings.pyproj", "{9E3CF15B-5A42-45C5-A5D0-FF70BF0DE510}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "3_exesise", "..\3_exesise\3_exesise.pyproj", "{16974DC2-0C5D-4428-ABF6-5EC7BD5F09FE}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "4_ConsoleInputOutput", "..\4_ConsoleInputOutput\4_ConsoleInputOutput.pyproj", "{5FAF125A-D76F-40AE-8357-AE94B9916703}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "5_AriphmeticOperations", "..\5_AriphmeticOperations\5_AriphmeticOperations.pyproj", "{E1AC1290-2486-4D7B-A392-58A3E05375A1}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "5_Execises", "..\5_Execises\5_Execises.pyproj", "{0B3B1D8F-8ADF-45A4-B703-6E3E794EF548}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "6_Uslovn_viraz", "..\6_Uslovn_viraz\6_Uslovn_viraz.pyproj", "{F13F2ADE-ACE1-48DF-BE55-0A3BA28EFC75}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "7_If", "..\7_If\7_If.pyproj", "{AD6B8C2C-A87A-4F02-A8D2-062A02485E54}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "перевод", "..\перевод\перевод.pyproj", "{10877BFC-4634-42D8-AEC8-4F01D26009EF}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Квадратныеуравнения", "..\7_КвадрУр\Квадратныеуравнения.pyproj", "{A24FE6CD-C92A-48C4-B70A-D8AD2B1ADEF9}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "8_Цикл", "..\8_Цикл\8_Цикл.pyproj", "{08289FDD-8A5B-4673-9538-EEF75C6C1DC4}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "3 count", "..\3 count\3 count.pyproj", "{044C5EEE-4260-4C25-90DF-75CAC505049C}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "8_Practicuum", "..\8_Practicuum\8_Practicuum.pyproj", "{3C18C715-1AFC-465C-AA2F-DF43A35C48A9}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "9_Func", "..\9_Func\9_Func.pyproj", "{FF4295DB-3013-4285-BA4B-25FE84D51759}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "9_practicum", "..\9_practicum\9_practicum.pyproj", "{60E64D3B-42C4-4DA2-BF8A-CD8B42AFD5BC}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "10_str", "..\10_str\10_str.pyproj", "{9BD71495-AF1C-463D-B73C-F4A6C2139F78}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "практика", "..\практика\практика.pyproj", "{02B0A4BA-2B9C-468F-B5B3-EF96CD3359B7}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "11_Exeption", "..\11_Exeption\11_Exeption.pyproj", "{678094CC-A714-4376-860E-CBCC6D885306}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "12_практика", "..\12_практика\12_практика.pyproj", "{E3064DEC-42B6-4076-9C98-FA98FF801989}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "13_modules", "..\13_modules\13_modules.pyproj", "{BA1C5E70-3648-4726-BF70-DAC5AEED3364}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SDLL", "..\SDLL\SDLL.pyproj", "{5B5B4E31-9245-4F78-B7DC-33562E18EBC3}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "14_lislts", "..\14_lislts\14_lislts.pyproj", "{08C8C27E-2D32-449D-ABC5-918F03878A66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF7D0969-8F25-4D80-BB26-68FAD5EFD4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7D0969-8F25-4D80-BB26-68FAD5EFD4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E1593E-9B21-4F72-9457-DEC7E3D3EC3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E1593E-9B21-4F72-9457-DEC7E3D3EC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C021D80-C000-45FA-8F50-D3C9FFF54B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C021D80-C000-45FA-8F50-D3C9FFF54B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3CF15B-5A42-45C5-A5D0-FF70BF0DE510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3CF15B-5A42-45C5-A5D0-FF70BF0DE510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16974DC2-0C5D-4428-ABF6-5EC7BD5F09FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16974DC2-0C5D-4428-ABF6-5EC7BD5F09FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FAF125A-D76F-40AE-8357-AE94B9916703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FAF125A-D76F-40AE-8357-AE94B9916703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1AC1290-2486-4D7B-A392-58A3E05375A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1AC1290-2486-4D7B-A392-58A3E05375A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B3B1D8F-8ADF-45A4-B703-6E3E794EF548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B3B1D8F-8ADF-45A4-B703-6E3E794EF548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13F2ADE-ACE1-48DF-BE55-0A3BA28EFC75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13F2ADE-ACE1-48DF-BE55-0A3BA28EFC75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD6B8C2C-A87A-4F02-A8D2-062A02485E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD6B8C2C-A87A-4F02-A8D2-062A02485E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10877BFC-4634-42D8-AEC8-4F01D26009EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10877BFC-4634-42D8-AEC8-4F01D26009EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A24FE6CD-C92A-48C4-B70A-D8AD2B1ADEF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A24FE6CD-C92A-48C4-B70A-D8AD2B1ADEF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08289FDD-8A5B-4673-9538-EEF75C6C1DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08289FDD-8A5B-4673-9538-EEF75C6C1DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{044C5EEE-4260-4C25-90DF-75CAC505049C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{044C5EEE-4260-4C25-90DF-75CAC505049C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C18C715-1AFC-465C-AA2F-DF43A35C48A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C18C715-1AFC-465C-AA2F-DF43A35C48A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4295DB-3013-4285-BA4B-25FE84D51759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4295DB-3013-4285-BA4B-25FE84D51759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E64D3B-42C4-4DA2-BF8A-CD8B42AFD5BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E64D3B-42C4-4DA2-BF8A-CD8B42AFD5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD71495-AF1C-463D-B73C-F4A6C2139F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD71495-AF1C-463D-B73C-F4A6C2139F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B0A4BA-2B9C-468F-B5B3-EF96CD3359B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B0A4BA-2B9C-468F-B5B3-EF96CD3359B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678094CC-A714-4376-860E-CBCC6D885306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678094CC-A714-4376-860E-CBCC6D885306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3064DEC-42B6-4076-9C98-FA98FF801989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3064DEC-42B6-4076-9C98-FA98FF801989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1C5E70-3648-4726-BF70-DAC5AEED3364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1C5E70-3648-4726-BF70-DAC5AEED3364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5B4E31-9245-4F78-B7DC-33562E18EBC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5B4E31-9245-4F78-B7DC-33562E18EBC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C8C27E-2D32-449D-ABC5-918F03878A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C8C27E-2D32-449D-ABC5-918F03878A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C2B25A7-EA96-4F44-A5EC-83C50BFB53F1}
+	EndGlobalSection
+EndGlobal
