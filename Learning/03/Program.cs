@@ -6,7 +6,7 @@ namespace _03
     {
         static void Main(string[] args)
         {
-            //значения по умолчанию для разных типов данных 
+            //значения       по умолчанию для разных типов данных 
             Console.WriteLine($"default(int) = {default(int)}");
             Console.WriteLine($"default(float) = {default(float)}");
             Console.WriteLine($"default(double) = {default(double)}");
